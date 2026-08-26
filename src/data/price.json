@@ -1,0 +1,47 @@
+[
+  {
+    "id": "foundation",
+    "title": "Foundation",
+    "subtitle": "For early-stage teams validating vision and identity",
+    "price": "$ 6,900",
+    "features": [
+      "Brand clarity workshop to define story, values, and direction",
+      "Core identity system built for recognition across touchpoints",
+      "Messaging and tone definition aligned to customer psychology",
+      "Visual direction and art reference to lock aesthetic direction",
+      "Lightweight design toolkit for early rollout and proof of concept",
+      "Final brand delivery with export-ready assets and documentation"
+    ],
+    "image": "/assets/picss/coolman.png"
+  },
+  {
+    "id": "growth",
+    "title": "Growth",
+    "subtitle": "For funded teams scaling product, brand, and perception",
+    "price": "$ 11,900",
+    "features": [
+      "Complete identity framework with naming, narrative, and visual DNA",
+      "UX and product design support focused on adoption and retention",
+      "Modular component library for scalable product and website builds",
+      "Web experience and interaction design optimized for conversion",
+      "Motion and launch asset package for campaigns and social presence",
+      "Ongoing refinement cycles based on performance and audience feedback"
+    ],
+    "image": "/assets/picss/cap.png"
+  },
+  {
+    "id": "visionary",
+    "title": "Visionary",
+    "subtitle": "For companies shaping category leadership and long-term dominance",
+    "price": "$ 18,900",
+    "features": [
+      "Holistic brand + product ecosystem aligned to business positioning",
+      "Advanced UX + strategy sprints for complex multi-platform products",
+      "Custom media, motion, and 3D systems for standout market presence",
+      "Multi-platform creative direction across product, brand, and campaigns",
+      "Growth enablement roadmap including partnerships, messaging, and releases",
+      "Long-term design partnership with priority access and continued evolution"
+    ],
+    "image": "/assets/picss/backman.png"
+  }
+]
