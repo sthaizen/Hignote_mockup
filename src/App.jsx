@@ -6,28 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-import Main from './sections/Main';
-import Footer from "./sections/Footer";
-import TeamSection from "./sections/TeamSection";
-import BlueBar from "./sections/BlueBar";
-import Ctst from './sections/Ctst';
-import Questions from './sections/question';
-import ContactSummery from './sections/ContactSummery';
-import Newwork from './sections/Newwork';
-import HorizontalScroll from './sections/HorizontalScroll';
-import VideoSection from './sections/VideoSection';
-import VideoSection2 from './sections/VideoSection2';
-import Anotherabt from './sections/Anotherabt';
-import RestroAi from './sections/RestroAi';
-import MorphComp from './sections/MorphComp';
-import FeatureGrid from './sections/FeatureGrid';
-import BentoGrid from './sections/BentoGrid';
-import NewsSection from './sections/NewsSection';
-import WebPreview from './sections/WebPreview';
-import ConnectCta from './sections/ConnectCta';
 import SkillPage from './components/SkillPage/SkillPage';
-import BottomNav from './components/BottomNav';
-import HeatCapabilities from './sections/HeatCapabilities';
 import FounderMessage from './sections/FounderMessage';
 import StatsComp from './sections/StatsComp';
 import PointOfViewComp from './sections/PointOfViewComp';
@@ -101,19 +80,7 @@ const Home = () => {
       className='relative w-full min-h-screen'
     >
 
-      <div className="sticky top-0 z-0 w-full  pointer-events-auto">
-        {/* <Main /> */}
-      </div>
-
       <div className="relative z-10 bg-[#ffffff] shadow-[0_-10px_50px_rgba(0,0,0,0.12)] ">
-        {/* <Newwork /> */}
-        {/* <HorizontalScroll />
-        <MorphComp />
-        <BlueBar />
-        <TeamSection />
-        <FeatureGrid />
-        <WebPreview /> */}
-
         <HeroComp />
         <FounderMessage />
         <PlaceholderComp />
@@ -127,12 +94,7 @@ const Home = () => {
         <InsightsComp />
         <CoolSection />
         <ProjectComp />
-        {/* 
-        <ConnectCta /> */}
-
       </div>
-      {/* 
-      <BottomNav /> */}
 
     </ReactLenis>
 
