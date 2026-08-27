@@ -20,6 +20,10 @@ import CoolSection from './sections/CoolSection';
 import ProjectComp from './sections/ProjectComp';
 import NewsletterComp from './sections/NewsletterComp';
 import HeroComp from './sections/HeroComp';
+import OnePlatform from './sections/OnePlatform';
+import UserFeedback from './sections/UserFeedback';
+import NavBar from './components/NavBar';
+import Main from './components/main';
 
 const Home = () => {
   const location = useLocation();
@@ -80,10 +84,14 @@ const Home = () => {
       className='relative w-full min-h-screen'
     >
 
-      <div className="relative z-10 bg-[#ffffff] shadow-[0_-10px_50px_rgba(0,0,0,0.12)] ">
+      <div className="relative z-10 bg-transparent shadow-[0_-10px_50px_rgba(0,0,0,0.12)] ">
+        <NavBar />
         <HeroComp />
-        <FounderMessage />
-        <PlaceholderComp />
+        {/* <FounderMessage /> */}
+        <Main />
+        <OnePlatform />
+        {/* <UserFeedback /> */}
+        {/* <PlaceholderComp /> */}
         <ReviewsSection />
         <StatsComp />
         <PointOfViewComp />

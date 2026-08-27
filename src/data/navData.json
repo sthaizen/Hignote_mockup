@@ -1,0 +1,109 @@
+{
+  "products": {
+    "title": "Products",
+    "sections": {
+      "platform": [
+        { "title": "North", "description": "Enterprise-ready AI for business" },
+        { "title": "Compass", "description": "Intelligent search and discovery" }
+      ],
+      "models": [
+        { "title": "Command", "description": "Generative language models", "isNew": true },
+        { "title": "Transcribe", "description": "Speech recognition model", "isNew": true },
+        { "title": "North Mini Code", "description": "Agentic coding model", "isNew": true },
+        { "title": "Embed", "description": "Search and discovery model" },
+        { "title": "Rerank", "description": "Semantic search ranking" }
+      ],
+      "productLinks": [
+        { "title": "Products Overview", "url": "#" },
+        { "title": "Total Cost of AI Ownership", "url": "#" },
+        { "title": "Pricing", "url": "#" }
+      ]
+    },
+    "featured": {
+      "image": "/card_03_motion_blur.png",
+      "text": "Command: High-performance generative AI models for real-world applications →"
+    }
+  },
+  "solutions": {
+    "title": "Solutions",
+    "sections": {
+      "deploy": [
+        { "title": "Model Vault", "description": "Dedicated model inference platform" },
+        { "title": "Private Deployments", "description": "On-prem or isolated VPCs" },
+        { "title": "Security", "description": "Protect your data at every stage" }
+      ],
+      "industries": [
+        "Financial Services", "Public Sector", "Technology", "Telecommunications", "Energy and Utilities", "Healthcare and Life Sciences", "Manufacturing"
+      ]
+    },
+    "featured": {
+      "image": "/Analatics.png",
+      "text": "Model Vault provides fully-isolated, performant inference with SaaS simplicity →"
+    }
+  },
+  "resources": {
+    "title": "Resources",
+    "sections": {
+      "insights": [
+        { "title": "Customer Stories" }
+      ],
+      "forDevelopers": [
+        { "title": "Developers" },
+        { "title": "Models Overview" },
+        { "title": "Docs", "external": true },
+        { "title": "Discord", "external": true },
+        { "title": "LLM University" }
+      ],
+      "connect": [
+        { "title": "Partners" },
+        { "title": "Events" },
+        { "title": "Webinars", "external": true },
+        { "title": "Merch Store", "external": true }
+      ]
+    },
+    "featured": {
+      "image": "/Nice.png",
+      "text": "How CoreWeave used Cohere North to transform its customer support in 90 days →"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "info": {
+      "title": "Blog",
+      "description": "The latest news, launches, and insights",
+      "link": "Read more →"
+    },
+    "articles": [
+      { "image": "/bill.png", "text": "The state of sovereign AI adoption in 2026 →" },
+      { "image": "/multi.png", "text": "Cohere and the University of Waterloo launch partnership to strengthen Canada's AI talent pipeline →" },
+      { "image": "/googles.png", "text": "Introducing North Automations: Intelligent workflow orchestration →" }
+    ]
+  },
+  "research": {
+    "title": "Research",
+    "sections": {
+      "research": [
+        { "title": "Cohere Labs", "description": "Cohere's ML research lab" }
+      ],
+      "explorations": [
+        { "title": "Future(s) of Work", "description": "How will AI change the way we work?" },
+        { "title": "Aya Models", "description": "Multilingual AI at scale" },
+        { "title": "All Papers", "isLink": true }
+      ],
+      "initiatives": [
+        { "title": "Research Scholars", "description": "Finding the new generation of ML talent" },
+        { "title": "Open Science Community", "description": "Championing global, open science" },
+        { "title": "Catalyst Grants", "description": "Supporting impactful ML endeavors" }
+      ],
+      "resourcesLinks": [
+        { "title": "Blog" },
+        { "title": "Hugging Face", "external": true },
+        { "title": "Events", "external": true }
+      ]
+    },
+    "featured": {
+      "image": "/assets/picss/hero.png",
+      "text": "The future of work debate has an evidence problem →"
+    }
+  }
+}
