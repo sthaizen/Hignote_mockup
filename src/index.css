@@ -432,3 +432,33 @@ input[type="reset"] {
   0% { opacity: 1; }
   100% { opacity: 0.1; }
 }
+
+/* Hero Background */
+.hero {
+  background:
+    radial-gradient(
+      ellipse at 18% 52%,
+      rgba(254, 203, 191, 0.75) 0%,
+      rgba(254, 203, 191, 0.35) 28%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 40% 48%,
+      rgba(254, 175, 196, 0.70) 0%,
+      rgba(254, 175, 196, 0.30) 30%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at 60% 48%,
+      rgba(246, 174, 222, 0.60) 0%,
+      rgba(246, 174, 222, 0.25) 32%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 84% 50%,
+      rgba(207, 197, 253, 0.70) 0%,
+      rgba(224, 183, 242, 0.30) 35%,
+      transparent 62%
+    ),
+    #ffffff;
+}

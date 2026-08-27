@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Together, they unlock what legacy systems can't."
+  },
+  "cards": [
+    {
+      "id": "issuing",
+      "title": "Issuing",
+      "description": "Launch and manage card programs with full control"
+    },
+    {
+      "id": "acquiring",
+      "title": "Acquiring",
+      "description": "Accept and process payments with flexibility and at scale",
+      "mockupData": {
+        "monthlyFee": "$1000",
+        "cardNumber": "1234 1234 1234 1234",
+        "buttonText": "Pay"
+      }
+    },
+    {
+      "id": "credit",
+      "title": "Credit",
+      "description": "Create branded credit ",
+      "mockupData": {
+        "approvalText": "You're Approved!",
+        "approvalSub": "Credit",
+        "limit": "$10,000",
+        "apr": "20.99%",
+        "rewards": "3x pts"
+      }
+    },
+    {
+      "id": "money_movement",
+      "title": "Money Movement",
+      "description": "Move funds across rails with speed and full visibility",
+      "mockupData": {
+        "options": [
+          "OCT",
+          "Stablecoin",
+          "AFT",
+          "Payouts",
+          "Check"
+        ]
+      }
+    }
+  ]
+}
