@@ -61,8 +61,8 @@ const ContactlessIcon = () => (
 
 const OnePlatform = () => {
   return (
-    <div className="w-full bg-[#f5f3eb] py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-[1300px] mx-auto">
+    <div className="relative z-20 w-full bg-[#f5f3eb] pt-32 pb-24 px-6 md:px-12 lg:px-24 -mt-24 md:-mt-32">
+      <div className="max-w-[1500px] mx-auto">
 
         {/* Title Section */}
         <div className="mb-22">
