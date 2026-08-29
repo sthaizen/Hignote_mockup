@@ -4,8 +4,8 @@ import IntegrationCloud from './IntegrationCloud';
 
 const EmptyBento = () => {
   return (
-    <section className="py-[80px] bg-[#f5f3eb]">
-      <div className="max-w-[1360px] mx-auto px-[16px] sm:px-[24px] lg:px-[32px]">
+    <section className="pt-[80px] bg-[#f5f3eb]">
+      <div className="max-w-[1500px] mx-auto px-[16px] sm:px-[24px] lg:px-[32px]">
 
         {/* Title Section */}
         <div className="mb-[64px]">

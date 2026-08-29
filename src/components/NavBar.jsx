@@ -2,6 +2,18 @@ import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import navData from '../data/navData.json';
 
+// ==========================================
+// 🎨 UI CONTROLS - ADJUST VALUES BELOW 🎨
+// ==========================================
+// Controls for the Featured Images in the dropdown menus
+const FEATURED_IMAGE_WIDTH = "w-full";       // e.g., "w-full", "w-4/5", "w-[250px]"
+const FEATURED_IMAGE_HEIGHT = "h-52";        // e.g., "h-32", "h-40", "h-64", "h-[200px]"
+
+// Controls for the dropdown menu background colors when it pops up
+const DROPDOWN_MAIN_BG = "bg-[#f5f3eb]";         // Main section background (left side)
+const DROPDOWN_FEATURED_BG = "bg-black/1"; // Featured section background (right side)
+// ==========================================
+
 const NewTag = () => (
   <span className="ml-2 text-[9px] font-bold bg-[#111111] text-white px-1.5 py-0.5 rounded uppercase tracking-wider align-middle">
     New
@@ -46,7 +58,7 @@ const NavItem = ({ title, activeMenu, handleMouseEnter, handleMouseLeave, isSwit
     >
       <div className="relative px-4 py-2 flex items-center justify-center">
         {/* Background Pill */}
-        <div className={`absolute inset-0 rounded-full bg-gray-100 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+        <div className={`absolute inset-0 rounded-full bg-black/10 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
 
         {/* Rolling Text Container */}
         <div className="relative overflow-hidden text-center">
@@ -61,7 +73,7 @@ const NavItem = ({ title, activeMenu, handleMouseEnter, handleMouseLeave, isSwit
       {children && (
         <div
           ref={menuRef}
-          className="absolute top-[64px] left-0 w-full bg-white border-y border-gray-100 cursor-default max-h-[85vh] overflow-y-auto hidden"
+          className={`absolute top-[64px] left-0 w-full ${DROPDOWN_MAIN_BG} border-y border-gray-100 cursor-default max-h-[85vh] overflow-y-auto hidden`}
         >
           {children}
         </div>
@@ -135,7 +147,7 @@ const NavBar = () => {
         className="fixed top-[64px] left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[90] opacity-0 invisible pointer-events-none"
       />
 
-      <nav className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-transform duration-300 ease-in-out ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-[100] bg-[#f5f3eb]/95 backdrop-blur-sm border-b border-gray-100 transition-transform duration-300 ease-in-out ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex items-center justify-between px-10 h-[64px]">
           {/* Left section: Logo and Links */}
           <div className="flex items-center gap-10 h-full">
@@ -183,11 +195,11 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="w-[30%] bg-[#fafafa] p-8 border-l border-gray-100 flex flex-col">
+                  <div className={`w-[30%]  ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col `}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
-                        <img src={navData.products.featured.image} alt="Featured" className="w-full h-32 object-cover group-hover/feature:scale-105 transition-transform duration-500" />
+                        <img src={navData.products.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
                         {navData.products.featured.text}
@@ -220,11 +232,11 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="w-[30%] bg-[#fafafa] p-8 border-l border-gray-100 flex flex-col">
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
-                        <img src={navData.solutions.featured.image} alt="Featured" className="w-full h-32 object-cover group-hover/feature:scale-105 transition-transform duration-500" />
+                        <img src={navData.solutions.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
                         {navData.solutions.featured.text}
@@ -263,11 +275,11 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="w-[30%] bg-[#fafafa] p-8 border-l border-gray-100 flex flex-col">
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
-                        <img src={navData.resources.featured.image} alt="Featured" className="w-full h-32 object-cover group-hover/feature:scale-105 transition-transform duration-500" />
+                        <img src={navData.resources.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
                         {navData.resources.featured.text}
@@ -287,11 +299,11 @@ const NavBar = () => {
                     </div>
                     <a href="#" className="text-[14px] font-medium text-black hover:underline mt-8 block">{navData.blog.info.link}</a>
                   </div>
-                  <div className="w-[70%] bg-[#fafafa] p-8 border-l border-gray-100 grid grid-cols-3 gap-4">
+                  <div className={`w-[70%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 grid grid-cols-3 gap-4`}>
                     {navData.blog.articles.map((item, idx) => (
                       <div key={idx} className="group/feature cursor-pointer flex flex-col gap-3">
                         <div className="rounded-lg overflow-hidden border border-gray-200">
-                          <img src={item.image} alt="Blog" className="w-full h-40 object-cover group-hover/feature:scale-105 transition-transform duration-500" />
+                          <img src={item.image} alt="Blog" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                         </div>
                         <p className="text-[13px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
                           {item.text}
@@ -342,11 +354,11 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="w-[30%] bg-[#fafafa] p-8 border-l border-gray-100 flex flex-col">
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200 bg-gray-100">
-                        <img src={navData.research.featured.image} alt="Featured" className="w-full h-32 object-cover group-hover/feature:scale-105 transition-transform duration-500" />
+                        <img src={navData.research.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
                         {navData.research.featured.text}
@@ -357,7 +369,7 @@ const NavBar = () => {
               </NavItem>
 
               {/* COMPANY */}
-              <NavItem title="Company" activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching} />
+              <NavItem title="Pricing" activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching} />
 
             </div>
           </div>

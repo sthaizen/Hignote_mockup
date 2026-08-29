@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import SkillPage from './components/SkillPage/SkillPage';
 import FounderMessage from './sections/FounderMessage';
-import StatsComp from './sections/StatsComp';
+import HeroComp from './sections/HeroComp';
 import PointOfViewComp from './sections/PointOfViewComp';
 import BentoComponent from './sections/BentoComponent';
 import TeamComp from './sections/TeamComp';
@@ -87,25 +87,26 @@ const Home = () => {
     >
 
       <div className="relative z-10 bg-transparent shadow-[0_-10px_50px_rgba(0,0,0,0.12)] ">
-        {/* <NavBar /> */}
+        <NavBar />
         {/* <FounderMessage /> */}
-        {/* <Main /> */}
-        <OnePlatform />
+        <HeroComp />
         <EmptyBento />
-
-        <PointOfViewComp />
+        <ReviewsSection />
         <PicturePoints />
-        {/* <UserFeedback /> */}
+        {/* <PointOfViewComp /> */}
+        <OnePlatform />
+
+        <UserFeedback />
+        {/* <InsightsComp /> */}
         {/* <PlaceholderComp /> */}
-        {/* <ReviewsSection />
-        <StatsComp />
-        <TeamComp />
-        <PricingComp />
-        <BentoComponent />
+
+        {/* <TeamComp /> */}
+        {/* <PricingComp /> */}
+        {/* <BentoComponent /> */}
         <NewsletterComp />
-        <InsightsComp />
+
         <CoolSection />
-        <ProjectComp /> */}
+        <ProjectComp />
       </div>
 
     </ReactLenis>

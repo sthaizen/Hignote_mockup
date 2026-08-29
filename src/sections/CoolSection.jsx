@@ -62,8 +62,8 @@ const CoolSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-32">
-      <div className="w-full max-w-[1400px] mx-auto relative rounded-3xl overflow-hidden min-h-[600px] flex items-center">
+    <section ref={containerRef} className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-32">
+      <div className="w-full max-w-[1800px] mx-auto relative rounded-xl overflow-hidden min-h-[600px] flex items-center">
 
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -100,7 +100,7 @@ const CoolSection = () => {
                 <span className="text-[13px] font-semibold tracking-wide uppercase">
                   START HERE
                 </span>
-                <span className="flex items-center justify-center w-7 h-7 rounded-xl border border-black/20 bg-transparent text-black">
+                <span className="flex items-center justify-center w-6 h-6 rounded-md border border-black/20 bg-transparent text-black">
                   <ArrowUpRight size={16} strokeWidth={2.5} />
                 </span>
               </button>

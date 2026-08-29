@@ -49,7 +49,7 @@ const InsightsComp = () => {
     });
 
     // Animate Header Elements
-    tl.fromTo('.insight-header-anim', 
+    tl.fromTo('.insight-header-anim',
       { opacity: 0, y: 40 },
       { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power3.out' }
     );
@@ -63,7 +63,7 @@ const InsightsComp = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-32 overflow-hidden">
+    <section ref={containerRef} className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-32 overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16 md:mb-24">

@@ -12,6 +12,7 @@ import {
   Wand2
 } from 'lucide-react';
 import data from '../data/oneplatform.json';
+import AnimatedDots from '../components/AnimatedDots';
 
 export const PATHWAY_CONFIG = {
   animationSpeed: '2s',
@@ -59,14 +60,28 @@ const ContactlessIcon = () => (
   </div>
 );
 
+
+// EDIT THIS TO SET THE TEXT SIZE FOR ALL CARDS
+const CARD_TEXT_SIZE = "text-[22px]";
+
+// EDIT THESE TO CONTROL THE FADE BLEND SIZES FOR ALL CARDS
+const CARD_FADE_WIDTH = "35%";
+const CARD_FADE_HEIGHT = "25%";
+
+const CARD_DIMENSIONS = "w-[320px] h-[420px]";
+
+const CARD_WRAPPER_STYLE = "flex flex-wrap justify-center gap-8";
+
+const CARD_CONTAINER_STYLE = `rounded-[12px] p-[32px] pb-0 overflow-hidden relative border border-[#dedcdb] flex flex-col justify-between shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all ${CARD_DIMENSIONS}`;
+
 const OnePlatform = () => {
   return (
-    <div className="relative z-20 w-full bg-[#f5f3eb] pt-32 pb-24 px-6 md:px-12 lg:px-24 -mt-24 md:-mt-32">
+    <div className="relative z-20 w-full bg-[#f5f3eb] pt-32 pb-2 px-6 md:px-12 lg:px-24 -mt-24 md:-mt-32">
       <div className="max-w-[1500px] mx-auto">
 
         {/* Title Section */}
         <div className="mb-22">
-          <h2 className="font-display max-w-7xl text-2xl lg:text-7xl text-black leading-[1.1] font-medium tracking-tight">
+          <h2 className="font-display max-w-7xl text-[24px] lg:text-[54px] text-black leading-[1.1] font-medium tracking-tight">
             Everything you need to launch fast,<br className="hidden md:block" /> differentiate, and keep innovating
           </h2>
           <p className="max-w-lg pt-4 text-[18px] opacity-60 text-black">
@@ -75,74 +90,57 @@ const OnePlatform = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div className={CARD_WRAPPER_STYLE}>
+          {[
+            {
+              data: data.cards[0],
+              img: '/qsa.png',
+              imgClass: 'w-[125%] max-w-none object-contain rounded-t-[12px] translate-x-4 translate-y-4',
+              wrapperClass: 'ml-[10px]',
+              bgColor: 'bg-[#f6f4f3]',
+              fadeFrom: 'from-[#f6f4f3]'
+            },
+            {
+              data: data.cards[1],
+              img: '/qwe.png',
+              imgClass: 'w-[125%] max-w-none object-contain rounded-t-[12px] translate-x-4 translate-y-4',
+              wrapperClass: 'ml-[10px]',
+              bgColor: 'bg-[#f5f3f1]',
+              fadeFrom: 'from-[#f5f3f1]'
+            },
+            {
+              data: data.cards[2],
+              img: '/rfd.png',
+              imgClass: 'w-[125%] max-w-none object-contain rounded-t-[12px] translate-x-4 translate-y-4',
+              wrapperClass: 'ml-[10px]',
+              bgColor: 'bg-[#f4f1ed]',
+              fadeFrom: 'from-[#f4f1ed]'
+            },
+            {
+              data: data.cards[3],
+              img: '/rq.png',
+              imgClass: 'w-[125%] max-w-none object-contain rounded-t-[12px] translate-x-4 translate-y-4',
+              wrapperClass: 'ml-[10px]',
+              bgColor: 'bg-[#f6f4f3]',
+              fadeFrom: 'from-[#f6f4f3]'
+            }
+          ].map((card, index) => (
+            <div key={index} className={`${CARD_CONTAINER_STYLE} ${card.bgColor}`}>
+              <AnimatedDots />
+              <div className="flex justify-between items-start mb-[16px] relative z-30">
+                <h3 className={`${CARD_TEXT_SIZE} font-medium text-gray-900 leading-tight tracking-tight`}>
+                  {card.data?.title} <span className="text-black/60 font-normal">{card.data?.description}</span>
+                </h3>
+              </div>
+              <div className={`relative w-full mt-auto flex items-end justify-center z-10 ${card.wrapperClass}`}>
+                <img src={card.img} alt={card.data?.title} className={card.imgClass} />
+              </div>
 
-          <div className="bg-[#faf7f5] rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col relative overflow-hidden group">
-            <div className="z-10 relative mb-1 p-6 pb-0">
-              <h3 className="text-xl font-semibold text-gray-900 mb1">{data.cards[2].title}</h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed pr-4">
-                {data.cards[2].description}
-              </p>
+              {/* Fade out overlays tied to the card edges */}
+              <div className={`absolute top-0 right-0 bottom-0 pointer-events-none z-20 bg-gradient-to-l ${card.fadeFrom} from-10% to-transparent`} style={{ width: CARD_FADE_WIDTH }}></div>
+              <div className={`absolute left-0 right-0 bottom-0 pointer-events-none z-20 bg-gradient-to-t ${card.fadeFrom} from-10% to-transparent`} style={{ height: CARD_FADE_HEIGHT }}></div>
             </div>
-
-            <div className="w-full mt-auto pt-4">
-              <img
-                src="/Analatics.png"
-                alt="Analytics"
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
-
-          <div className="bg-[#faf7f5] rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col relative overflow-hidden group">
-            <div className="z-10 relative mb-1 p-6 pb-0">
-              <h3 className="text-xl font-semibold text-gray-900 mb1">{data.cards[2].title}</h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed pr-4">
-                {data.cards[2].description}
-              </p>
-            </div>
-
-            <div className="w-full mt-auto pt-4">
-              <img
-                src="/Analatics.png"
-                alt="Analytics"
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
-          <div className="bg-[#faf7f5] rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col relative overflow-hidden group">
-            <div className="z-10 relative mb-1 p-6 pb-0">
-              <h3 className="text-xl font-semibold text-gray-900 mb1">{data.cards[2].title}</h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed pr-4">
-                {data.cards[2].description}
-              </p>
-            </div>
-
-            <div className="w-full mt-auto pt-4">
-              <img
-                src="/Analatics.png"
-                alt="Analytics"
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
-
-          <div className="bg-[#faf7f5] rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col relative overflow-hidden group">
-            <div className="z-10 relative mb-1 p-6 pb-0">
-              <h3 className="text-xl font-semibold text-gray-900 mb1">{data.cards[2].title}</h3>
-              <p className="text-gray-500 text-[15px] leading-relaxed pr-4">
-                {data.cards[2].description}
-              </p>
-            </div>
-
-            <div className="w-full mt-auto pt-4">
-              <img
-                src="/Analatics.png"
-                alt="Analytics"
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="hidden lg:block w-full mt-6 mb-2 relative z-0">
@@ -220,18 +218,18 @@ const OnePlatform = () => {
 
         <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 relative z-10">
           {[
-            "Unified Ledger",
-            "Stablecoin",
-            "Instant Payments",
-            "Virtual Card Express",
-            "Capital Connect",
-            "Datashare",
-            "Spend Controls",
-            "Fraud Tools"
+            "Live Orders",
+            "Table Management",
+            "Kitchen Control",
+            "Smart Inventory",
+            "Staff Management",
+            "Customer Insights",
+            "Sales Analytics",
+            "Branch Control"
           ].map((feature, idx) => (
             <div
               key={idx}
-              className="bg-[#e2e0d6]/80 rounded-xl flex flex-col items-center justify-center p-4 aspect-[3/2] text-center shadow-sm"
+              className="bg-[#e2e0d6]/80 rounded-xl flex flex-col items-center justify-center p-4 aspect-[4/2] text-center shadow-sm"
             >
               <span className="text-[14px] sm:text-sm font-normal text-gray-900 leading-snug">
                 {feature}
@@ -323,7 +321,7 @@ const OnePlatform = () => {
 
         {/* Unified Platform Header Section */}
         <div className="mt-16 text-center mb-8 relative z-10">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-black leading-tight font-medium tracking-tight mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-[55px] text-black leading-tight font-medium tracking-tight mb-2">
             Built on a Unified Platform
           </h2>
           <p className="mx-auto max-w-lg text-sm opacity-60 md:text-base text-black font-medium">
@@ -332,7 +330,7 @@ const OnePlatform = () => {
         </div>
 
         {/* Value Props 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-16 mb-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-13 mb-4 relative z-10">
           {/* Launch Faster */}
           <div className="flex flex-col items-center text-center">
             <Timer className="w-[30px] h-[30px] text-black mb-[16px] stroke-[1.5]" />

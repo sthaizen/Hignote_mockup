@@ -3,8 +3,8 @@ import { ArrowUpRight } from 'lucide-react';
 
 const NewsletterComp = () => {
   return (
-    <section className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] ">
-      <div className="w-full max-w-[1400px] mx-auto bg-white rounded-[24px] pl-2 pr-10 pt-1 pb-1  shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col lg:flex-row gap-12 lg:gap-10 items-center">
+    <section className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] ">
+      <div className="w-full max-w-[1400px] mx-auto bg-[#f5f3eb] border border-[#dedcdb]  rounded-[24px] pl-2 pr-10 pt-1 pb-1  shadow-[0_2px_10px_rgba(0,0,0,0.02)]  flex flex-col lg:flex-row gap-12 lg:gap-10 items-center">
 
         {/* Left: Image */}
         <div className="w-full lg:w-[30%] h-[300px] md:h-[400px] lg:h-[260px] shrink-0">

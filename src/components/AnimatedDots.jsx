@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const AnimatedDots = ({
-  numDots = 450,
+  numDots = 150, // Reduced from 450 to improve performance
   minSize = 0.5,
   maxSize = 1.0,
   hoverRadius = 120,
@@ -17,7 +17,7 @@ const AnimatedDots = ({
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let dots = [];
-    const mouse = { x: -1000, y: -1000 };
+    let isVisible = false;
 
     const resize = () => {
       canvas.width = canvas.parentElement.clientWidth;
@@ -41,6 +41,8 @@ const AnimatedDots = ({
     }
 
     const draw = () => {
+      if (!isVisible) return;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = '#bfbfbf'; // Updated dot color
 
@@ -62,11 +64,31 @@ const AnimatedDots = ({
       animationFrameId = requestAnimationFrame(draw);
     };
 
-    draw();
-
     const parent = canvas.parentElement;
 
+    // Intersection Observer to pause animation when out of view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            draw();
+          }
+        } else {
+          isVisible = false;
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+          }
+        }
+      });
+    }, { threshold: 0 });
+
+    if (parent) {
+      observer.observe(parent);
+    }
+
     const handleMouseMove = (e) => {
+      if (!isVisible) return;
       const rect = parent.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
@@ -119,7 +141,9 @@ const AnimatedDots = ({
       if (parent) {
         parent.removeEventListener('mousemove', handleMouseMove);
         parent.removeEventListener('mouseleave', handleMouseLeave);
+        observer.unobserve(parent);
       }
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
   }, [numDots, minSize, maxSize, hoverRadius, hoverForce]);

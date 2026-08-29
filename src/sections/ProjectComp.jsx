@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const ProjectComp = () => {
   return (
-    <section className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-0 flex justify-center">
+    <section className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] px-4 md:px-8 py-20 md:py-0 flex justify-center">
       <div className="w-full max-w-[555px] flex flex-col items-start">
 
         <h3 className="text-[32px] md:text-[42px] font-medium leading-[1.2] text-[#000000] tracking-tight mb-6">

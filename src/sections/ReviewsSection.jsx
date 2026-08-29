@@ -24,9 +24,9 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] px-4 md:px-8 py-32">
+    <section className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] px-4 md:px-8 pt-32">
       <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-8 items-stretch">
-        
+
         {/* Left Column */}
         <div className="w-full lg:w-[25%] flex flex-col justify-between relative">
           <div className="flex items-center gap-3 text-[#60646C] text-[13px] font-medium tracking-wide uppercase leading-none pt-4 mb-32 lg:mb-0">
@@ -36,11 +36,11 @@ const ReviewsSection = () => {
 
           <div className="lg:pl-5 self-start w-full mt-12 lg:mt-0">
             <p className="text-[15px] text-[#60646C] leading-relaxed mb-6 max-w-[250px]">
-              More identities. More outcomes.<br/>See what design can unlock.
+              More identities. More outcomes.<br />See what design can unlock.
             </p>
-            <button className="inline-flex items-center gap-3 bg-[#ebebeb] hover:bg-[#e0e0e0] transition-colors px-4 py-2.5 rounded-[12px] text-[13px] font-semibold text-[#000000]/90">
+            <button className="inline-flex items-center gap-3 bg-[#ebebeb] hover:bg-[#e0e0e0] transition-colors px-4 py-2.5 rounded-[8px] text-[13px] font-semibold text-[#000000]/90">
               READ ALL STUDIES
-              <span className="bg-transparent border border-[#000000]/30 rounded-full p-0.5">
+              <span className="bg-transparent border border-[#000000]/30 rounded-md p-0.5">
                 <ArrowUpRight size={14} strokeWidth={2} />
               </span>
             </button>
@@ -52,10 +52,10 @@ const ReviewsSection = () => {
           {studies.map((study) => (
             <div key={study.id} className="flex flex-col gap-3 group cursor-pointer">
               <div className="w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden bg-gray-200">
-                <img 
-                  src={study.image} 
-                  alt={study.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="mt-1">

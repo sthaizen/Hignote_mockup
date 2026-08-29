@@ -1,97 +1,81 @@
-import React from "react";
-import { TestimonialsColumn } from "../components/ui/testimonials-columns-1";
+import React, { useState, useRef } from "react";
+import { TestimonialsRow } from "../components/ui/testimonials-row";
 import { motion } from "motion/react";
+import testimonials from "../data/testimonials.json";
 
-const testimonials = [
-  {
-    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=40&h=40",
-    name: "Briana Patton",
-    role: "Operations Manager",
-  },
-  {
-    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=40&h=40",
-    name: "Bilal Ahmed",
-    role: "IT Manager",
-  },
-  {
-    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40&h=40",
-    name: "Saman Malik",
-    role: "Customer Support Lead",
-  },
-  {
-    text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40",
-    name: "Omar Raza",
-    role: "CEO",
-  },
-  {
-    text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=40&h=40",
-    name: "Zainab Hussain",
-    role: "Project Manager",
-  },
-  {
-    text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=40&h=40",
-    name: "Aliza Khan",
-    role: "Business Analyst",
-  },
-  {
-    text: "Our business functions improved with a user-friendly design and positive customer feedback.",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=40&h=40",
-    name: "Farhan Siddiqui",
-    role: "Marketing Director",
-  },
-  {
-    text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=40&h=40",
-    name: "Sana Sheikh",
-    role: "Sales Manager",
-  },
-  {
-    text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40&h=40",
-    name: "Hassan Ali",
-    role: "E-commerce Manager",
-  },
-];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstRow = testimonials.slice(0, 3);
+const secondRow = testimonials.slice(3, 6);
+const thirdRow = testimonials.slice(6, 9);
 
 const UserFeedback = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+  // --- Spotlight Controls ---
+  const SPOTLIGHT_RADIUS = 500; // Size of the highlight circle (in px)
+  const SPOTLIGHT_FADE_PERCENT = 1; // How sharply the highlight fades (0-100%)
+  const OVERLAY_OPACITY = 70; // Darkness of the fade on non-highlighted cards (0-100%)
+  // --------------------------
+
   return (
-    <section className="bg-transparent py-20 relative">
-      <div className="container z-10 mx-auto px-6">
+    <section className="bg-[#f5f3eb] pt-[80px] pb-[100px] relative overflow-hidden">
+      <div className="max-w-[1500px] mx-auto px-[16px] sm:px-[24px] lg:px-[32px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
+          className="flex flex-col items-center justify-center max-w-[960px] mx-auto mb-[64px]"
         >
-          <div className="flex justify-center">
-            <div className="border border-black/10 py-1 px-4 rounded-lg text-sm font-medium text-black">
-              Testimonials
-            </div>
+          <div className="text-black/60 font-normal text-[16px] mb-[2px]">
+            70,000 teams and counting
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-black tracking-tight mt-5 text-center">
-            What our users say
+          <h2 className="font-display text-[48px] text-black leading-tight font-medium tracking-tight text-center mb-[16px]">
+            We've got the receipts.
           </h2>
-          <p className="text-center mt-5 opacity-60 text-black max-w-sm">
-            See what our customers have to say about us.
-          </p>
+
+          <div className="relative group/btn">
+            <div className="absolute -inset-0.5 translate-y-0 translate-x-0 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-purple-500 rounded-[8px] blur opacity-0 group-hover/btn:opacity-70 transition duration-500"></div>
+            <button className="relative px-[17px] py-[8px] bg-black text-white font-medium rounded-[8px] text-[13px]  transition-colors  shadow-sm">
+              View Demo
+            </button>
+          </div>
         </motion.div>
 
-        <div className="flex justify-center gap-6 mt-16 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+        <div
+          ref={containerRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          className="relative mt-[32px] [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent) p-10"
+        >
+          <div className="flex flex-col gap-[10px]">
+            <TestimonialsRow testimonials={firstRow} duration={40} delay={-15} direction="right" isPaused={isHovering} />
+            <TestimonialsRow testimonials={secondRow} duration={45} delay={-25} direction="right" isPaused={isHovering} />
+            <TestimonialsRow testimonials={thirdRow} duration={35} delay={-5} direction="right" isPaused={isHovering} />
+          </div>
+
+          <div
+            className="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
+            style={{
+              backgroundColor: `rgba(245, 243, 235, ${OVERLAY_OPACITY / 100})`, /* Matches #f5f3eb background */
+              opacity: isHovering ? 1 : 0,
+              WebkitMaskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
+              maskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
+            }}
+          />
         </div>
       </div>
     </section>

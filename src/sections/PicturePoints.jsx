@@ -18,7 +18,7 @@ const tabs = [
   {
     id: 1,
     title: 'RestroBuddy',
-    image: '/Restrobuddy.png',
+    image: '/ww.png',
     description: 'Your intelligent assistant for managing orders, answering queries, and automating tasks.',
     features: [
       'Conversational AI for quick menu navigation and customer support',
@@ -51,7 +51,7 @@ const tabs = [
 ];
 
 const PicturePoints = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
   const contentRefs = useRef([]);
   const containerRef = useRef(null);
 
@@ -80,8 +80,8 @@ const PicturePoints = () => {
 
   return (
     <div ref={containerRef} className="w-full bg-[#f5f3eb] py-24 px-6 md:px-12 lg:px-24 font-['Inter',sans-serif] border-t border-gray-100">
-      <div className="max-w-[1500px] mx-auto">
-        <h3 className="text-center text-[28px] lg:text-[48px] text-[#212121] font-normal mb-16 lg:mb-20">
+      <div className="max-w-[1400px] mx-auto">
+        <h3 className="text-center text-[28px] lg:text-[48px] text-[#212121] font-normal mb-10">
           Our models. Your business.
         </h3>
 
@@ -100,12 +100,12 @@ const PicturePoints = () => {
           </div>
 
           {/* Right Side: Accordion */}
-          <div className="flex flex-col w-full pt-4 lg:pt-16">
+          <div className="flex flex-col w-full pt-0 lg:pt-0 pb-20">
             {tabs.map((tab, idx) => {
               const isActive = activeTab === idx;
               const initialStyles = {
-                height: idx === 0 ? 'auto' : 0,
-                opacity: idx === 0 ? 1 : 0,
+                height: idx === 1 ? 'auto' : 0,
+                opacity: idx === 1 ? 1 : 0,
               };
 
               return (

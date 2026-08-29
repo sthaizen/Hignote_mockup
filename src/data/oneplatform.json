@@ -4,45 +4,34 @@
   },
   "cards": [
     {
-      "id": "issuing",
-      "title": "Issuing",
-      "description": "Launch and manage card programs with full control"
+      "id": "peak-hour",
+      "title": "Peak-Hour Intelligence",
+      "description": "Stay ahead of every rush"
     },
     {
-      "id": "acquiring",
-      "title": "Acquiring",
-      "description": "Accept and process payments with flexibility and at scale",
-      "mockupData": {
-        "monthlyFee": "$1000",
-        "cardNumber": "1234 1234 1234 1234",
-        "buttonText": "Pay"
-      }
+      "id": "live-ops",
+      "title": "Live Operations Control",
+      "description": "Keep every thing in control"
     },
     {
-      "id": "credit",
-      "title": "Credit",
-      "description": "Create branded credit ",
-      "mockupData": {
-        "approvalText": "You're Approved!",
-        "approvalSub": "Credit",
-        "limit": "$10,000",
-        "apr": "20.99%",
-        "rewards": "3x pts"
-      }
+      "id": "digital-records",
+      "title": "Digital Records",
+      "description": "Keep every record organized"
     },
     {
-      "id": "money_movement",
-      "title": "Money Movement",
-      "description": "Move funds across rails with speed and full visibility",
-      "mockupData": {
-        "options": [
-          "OCT",
-          "Stablecoin",
-          "AFT",
-          "Payouts",
-          "Check"
-        ]
-      }
+      "id": "smart-recommendations",
+      "title": "Smart Recommendations",
+      "description": "Smarter decisions"
+    },
+    {
+      "id": "customer-intel",
+      "title": "Customer Intelligence",
+      "description": "Turn insights into smarter decisions"
+    },
+    {
+      "id": "role-control",
+      "title": "Role-Based Staff Control",
+      "description": "The right access for the right people"
     }
   ]
 }
