@@ -69,12 +69,12 @@ const CoolSection = () => {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             ref={bgImageRef}
-            src="/assets/picss/coolman.png"
+            src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Cool Man Background"
             className="w-full h-full object-cover origin-center"
           />
           {/* Subtle gradient overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent backdrop-blur-[2px]"></div>
         </div>
 
         {/* Content Container */}

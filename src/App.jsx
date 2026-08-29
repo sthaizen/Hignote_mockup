@@ -91,12 +91,12 @@ const Home = () => {
         {/* <FounderMessage /> */}
         <HeroComp />
         <EmptyBento />
+        <OnePlatform />
+        <UserFeedback />
         <ReviewsSection />
         <PicturePoints />
         {/* <PointOfViewComp /> */}
-        <OnePlatform />
 
-        <UserFeedback />
         {/* <InsightsComp /> */}
         {/* <PlaceholderComp /> */}
 

@@ -1,56 +1,56 @@
 [
   {
-    "text": "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+    "text": "This restaurant management system revolutionized our operations. Handling billing, kitchen orders, and inventory all in one place has made our daily routine so much easier.",
     "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=40&h=40",
-    "name": "Briana Patton",
+    "name": "Ram Shrestha",
+    "role": "Restaurant Owner"
+  },
+  {
+    "text": "Implementing this POS and management software was smooth. The interface is so user-friendly that our new waiters learned how to take orders on it in minutes.",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=40&h=40",
+    "name": "Sita Gurung",
+    "role": "Cafe Manager"
+  },
+  {
+    "text": "The support team is exceptional. They helped us set up the system across all our three branches in Kathmandu, and it works flawlessly syncing our data.",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40&h=40",
+    "name": "Ramesh Maharjan",
+    "role": "Franchise Owner"
+  },
+  {
+    "text": "I love the Kitchen Display System. It seamlessly integrated with our operations and completely stopped the confusion with paper tickets during busy evenings.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40",
+    "name": "Anjali Thapa",
+    "role": "Head Chef"
+  },
+  {
+    "text": "Its robust inventory tracking features have transformed our workflow. We now know exactly what ingredients we have and what we need to order from suppliers.",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=40&h=40",
+    "name": "Hari Pandey",
+    "role": "Restaurant Owner"
+  },
+  {
+    "text": "The smooth implementation exceeded expectations. It streamlined our table reservations and walk-in orders, improving our overall customer service.",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=40&h=40",
+    "name": "Nima Sherpa",
+    "role": "Cafe Owner"
+  },
+  {
+    "text": "Our billing process improved significantly with a user-friendly design. Customers appreciate the quick checkout and digital receipts.",
+    "image": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=40&h=40",
+    "name": "Sunita Karki",
     "role": "Operations Manager"
   },
   {
-    "text": "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=40&h=40",
-    "name": "Bilal Ahmed",
-    "role": "IT Manager"
-  },
-  {
-    "text": "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40&h=40",
-    "name": "Saman Malik",
-    "role": "Customer Support Lead"
-  },
-  {
-    "text": "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40",
-    "name": "Omar Raza",
-    "role": "CEO"
-  },
-  {
-    "text": "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=40&h=40",
-    "name": "Zainab Hussain",
-    "role": "Project Manager"
-  },
-  {
-    "text": "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=40&h=40",
-    "name": "Aliza Khan",
-    "role": "Business Analyst"
-  },
-  {
-    "text": "Our business functions improved with a user-friendly design and positive customer feedback.",
-    "image": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=40&h=40",
-    "name": "Farhan Siddiqui",
-    "role": "Marketing Director"
-  },
-  {
-    "text": "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
+    "text": "They delivered a solution that really understands the hospitality business. Managing happy hours and custom drink orders is now effortless.",
     "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=40&h=40",
-    "name": "Sana Sheikh",
-    "role": "Sales Manager"
+    "name": "Dipendra Poudel",
+    "role": "Bar Manager"
   },
   {
-    "text": "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
+    "text": "Using this system, our online delivery integration and table turnover rates significantly improved, boosting our daily sales.",
     "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40&h=40",
-    "name": "Hassan Ali",
-    "role": "E-commerce Manager"
+    "name": "Maya Tamang",
+    "role": "Restaurant Manager"
   }
 ]

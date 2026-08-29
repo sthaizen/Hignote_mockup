@@ -1,5 +1,47 @@
-import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ArrowUpRight, Play } from 'lucide-react';
+
+const VideoPlayer = ({ study }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+    }
+  };
+
+  return (
+    <div
+      className="w-full h-full relative cursor-pointer"
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePlay();
+      }}
+    >
+      <video
+        ref={videoRef}
+        src={study.video}
+        poster={study.image}
+        className="w-full h-full object-cover"
+        loop
+        playsInline
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
+      {!isPlaying && (
+        <div className="absolute top-3 right-3 z-10">
+          <Play className="w-5 h-5 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" fill="currentColor" />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ReviewsSection = () => {
   const studies = [
@@ -7,19 +49,21 @@ const ReviewsSection = () => {
       id: 1,
       title: 'Flowbit Platform',
       year: '2025',
-      image: '/assets/picss/red man.png',
+      image: '/qq.png',
+      video: '/lloo.mp4',
     },
     {
       id: 2,
       title: 'CodeZen',
       year: '2025',
-      image: '/assets/picss/cap.png',
+      image: '/qq.png',
+      video: '/tsa.mp4',
     },
     {
       id: 3,
       title: 'Mindex AI',
       year: '2025',
-      image: '/assets/picss/backman.png',
+      image: '/qq.png',
     }
   ];
 
@@ -38,7 +82,7 @@ const ReviewsSection = () => {
             <p className="text-[15px] text-[#60646C] leading-relaxed mb-6 max-w-[250px]">
               More identities. More outcomes.<br />See what design can unlock.
             </p>
-            <button className="inline-flex items-center gap-3 bg-[#ebebeb] hover:bg-[#e0e0e0] transition-colors px-4 py-2.5 rounded-[8px] text-[13px] font-semibold text-[#000000]/90">
+            <button className="inline-flex items-center gap-3 bg-[#eae7e5]  transition-colors px-4 py-2.5 rounded-[8px] text-[13px] font-semibold text-[#000000]/90">
               READ ALL STUDIES
               <span className="bg-transparent border border-[#000000]/30 rounded-md p-0.5">
                 <ArrowUpRight size={14} strokeWidth={2} />
@@ -51,12 +95,16 @@ const ReviewsSection = () => {
         <div className="w-full lg:w-[75%] grid grid-cols-1 md:grid-cols-3 gap-4">
           {studies.map((study) => (
             <div key={study.id} className="flex flex-col gap-3 group cursor-pointer">
-              <div className="w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden bg-gray-200">
-                <img
-                  src={study.image}
-                  alt={study.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              <div className="w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden bg-gray-200 relative">
+                {study.video ? (
+                  <VideoPlayer study={study} />
+                ) : (
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
               </div>
               <div className="mt-1">
                 <h3 className="text-[16px] font-medium text-[#000000] leading-none mb-1.5">{study.title}</h3>

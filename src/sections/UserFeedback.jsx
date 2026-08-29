@@ -26,6 +26,10 @@ const UserFeedback = () => {
   const SPOTLIGHT_RADIUS = 500; // Size of the highlight circle (in px)
   const SPOTLIGHT_FADE_PERCENT = 1; // How sharply the highlight fades (0-100%)
   const OVERLAY_OPACITY = 70; // Darkness of the fade on non-highlighted cards (0-100%)
+
+  // --- Edge Fade Controls (Left & Right) ---
+  const EDGE_FADE_WIDTH = "35%"; // Distance of the fade from left/right edges (e.g., "15%", "150px")
+  const EDGE_FADE_INTENSITY = 0; // Opacity at the very edges (0 = fully faded out, 100 = no fade)
   // --------------------------
 
   return (
@@ -53,30 +57,34 @@ const UserFeedback = () => {
             </button>
           </div>
         </motion.div>
+      </div>
+
+      <div
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        className="relative mt-[32px] w-full p-1"
+        style={{
+          WebkitMaskImage: `linear-gradient(to right, rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}), black ${EDGE_FADE_WIDTH}, black calc(100% - ${EDGE_FADE_WIDTH}), rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}))`,
+          maskImage: `linear-gradient(to right, rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}), black ${EDGE_FADE_WIDTH}, black calc(100% - ${EDGE_FADE_WIDTH}), rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}))`,
+        }}
+      >
+        <div className="flex flex-col gap-[10px]">
+          <TestimonialsRow testimonials={firstRow} duration={40} delay={-15} direction="right" isPaused={isHovering} />
+          <TestimonialsRow testimonials={secondRow} duration={45} delay={-25} direction="right" isPaused={isHovering} />
+          <TestimonialsRow testimonials={thirdRow} duration={35} delay={-5} direction="right" isPaused={isHovering} />
+        </div>
 
         <div
-          ref={containerRef}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          className="relative mt-[32px] [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent) p-10"
-        >
-          <div className="flex flex-col gap-[10px]">
-            <TestimonialsRow testimonials={firstRow} duration={40} delay={-15} direction="right" isPaused={isHovering} />
-            <TestimonialsRow testimonials={secondRow} duration={45} delay={-25} direction="right" isPaused={isHovering} />
-            <TestimonialsRow testimonials={thirdRow} duration={35} delay={-5} direction="right" isPaused={isHovering} />
-          </div>
-
-          <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
-            style={{
-              backgroundColor: `rgba(245, 243, 235, ${OVERLAY_OPACITY / 100})`, /* Matches #f5f3eb background */
-              opacity: isHovering ? 1 : 0,
-              WebkitMaskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
-              maskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
-            }}
-          />
-        </div>
+          className="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-out"
+          style={{
+            backgroundColor: `rgba(245, 243, 235, ${OVERLAY_OPACITY / 100})`, /* Matches #f5f3eb background */
+            opacity: isHovering ? 1 : 0,
+            WebkitMaskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
+            maskImage: `radial-gradient(circle ${SPOTLIGHT_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, transparent ${SPOTLIGHT_FADE_PERCENT}%, black 100%)`,
+          }}
+        />
       </div>
     </section>
   );
