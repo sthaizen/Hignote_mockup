@@ -18,10 +18,12 @@ import PlaceholderComp from './sections/PlaceholderComp';
 import ReviewsSection from './sections/ReviewsSection';
 import CoolSection from './sections/CoolSection';
 import ProjectComp from './sections/ProjectComp';
+import FourCardSection from './sections/FourCardSection';
 import NewsletterComp from './sections/NewsletterComp';
 import OnePlatform from './sections/OnePlatform';
 import PicturePoints from './sections/PicturePoints';
 import UserFeedback from './sections/UserFeedback';
+import Mockup from './sections/Mockup';
 import ConnectCat from './sections/ConnectCat';
 import Installation from './sections/installitation';
 import Footer from './sections/Footer';
@@ -34,6 +36,8 @@ import TwoBentos from './components/2bentos';
 const Home = () => {
   const location = useLocation();
   const lenisRef = useRef();
+  const heroRef = useRef(null);
+  const foregroundRef = useRef(null);
 
   useEffect(() => {
     let lenisInstance = null;
@@ -57,6 +61,25 @@ const Home = () => {
         lenisInstance.off('scroll', ScrollTrigger.update);
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (heroRef.current && foregroundRef.current) {
+        gsap.to(heroRef.current, {
+          scale: 0.92,
+          opacity: 0.4,
+          ease: "none",
+          scrollTrigger: {
+            trigger: foregroundRef.current,
+            start: "top bottom",
+            end: "top top",
+            scrub: true,
+          }
+        });
+      }
+    });
+    return () => ctx.revert();
   }, []);
 
   useEffect(() => {
@@ -90,29 +113,37 @@ const Home = () => {
       className='relative w-full min-h-screen'
     >
 
-      <div className="relative z-10 bg-transparent shadow-[0_-10px_50px_rgba(0,0,0,0.12)] ">
-        <NavBar />
+      <NavBar />
+
+      <div className="sticky top-0 z-0 w-full pointer-events-auto overflow-hidden  bg-[#f5f3eb]">
+        <div ref={heroRef} className="w-full origin-top ">
+          <HeroComp />
+        </div>
+      </div>
+
+      <div ref={foregroundRef} className="relative z-10 bg-[#f5f3eb] shadow-[0_-15px_50px_rgba(0,0,0,0.15)] ">
         {/* <FounderMessage /> */}
-        <HeroComp />
         <EmptyBento />
         <ReviewsSection />
+        <FourCardSection />
         <PicturePoints />
-
         <OnePlatform />
-        {/* <CoolSection /> */}
         <UserFeedback />
-        {/* <PointOfViewComp /> */}
+        <ProjectComp />
+        <Mockup />
 
+
+
+
+        {/* <CoolSection /> */}
+        {/* <PricingComp /> */}
+        {/* <PointOfViewComp /> */}
         {/* <InsightsComp /> */}
         {/* <PlaceholderComp /> */}
-
         {/* <TeamComp /> */}
-        {/* <PricingComp /> */}
         {/* <BentoComponent /> */}
         {/* <NewsletterComp /> */}
-        {/* 
-        <TwoBentos /> */}
-        <ProjectComp />
+        {/* <TwoBentos /> */}
         {/* <Footer /> */}
 
       </div>

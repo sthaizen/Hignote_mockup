@@ -368,6 +368,12 @@ const ReviewsSection = () => {
       </div>
 
       <div className="relative w-full">
+        {/* Strong Left Fade */}
+        <div className="absolute top-0 -left-50 bottom-0 w-[15%] md:w-[30%] bg-gradient-to-r from-[#f5f3eb] via-[#f5f3eb] to-transparent z-[200] pointer-events-none"></div>
+
+        {/* Strong Right Fade */}
+        <div className="absolute top-0 -right-50 bottom-0 w-[15%] md:w-[30%] bg-gradient-to-l from-[#f5f3eb] via-[#f5f3eb] to-transparent z-[200] pointer-events-none"></div>
+
         <div className="w-full">
           <div
             ref={scrollRef}

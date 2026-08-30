@@ -84,22 +84,72 @@ const NavItem = ({ title, activeMenu, handleMouseEnter, handleMouseLeave, isSwit
 
 const NavBar = () => {
   const [menuState, setMenuState] = useState({ active: null, switching: false });
-  const [isNavVisible, setIsNavVisible] = useState(true);
+  const navRef = useRef(null);
   const overlayRef = useRef(null);
   const timeoutRef = useRef(null);
   const lastScrollY = useRef(0);
 
+  const isAtTopRef = useRef(true);
+  const isNavVisibleRef = useRef(true);
+
+  // We use a unified GSAP updater to prevent React re-renders from lagging the scroll
+  const updateNavStyles = (atTop, isVisible, menuOpen) => {
+    if (!navRef.current) return;
+
+    // Visibility Animation
+    if (isVisible) {
+      gsap.to(navRef.current, { yPercent: 0, duration: 0.1, ease: 'power2.out', overwrite: 'auto' });
+    } else {
+      gsap.to(navRef.current, { yPercent: -100, duration: 0.3, ease: 'power2.inOut', overwrite: 'auto' });
+    }
+
+    // Background Color Animation
+    if (atTop && !menuOpen) {
+      gsap.to(navRef.current, {
+        backgroundColor: 'rgba(245, 243, 235, 0)',
+        borderBottomColor: 'rgba(243, 244, 246, 0)',
+        duration: 0.2,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    } else {
+      gsap.to(navRef.current, {
+        backgroundColor: 'rgba(245, 243, 235, 0.95)',
+        borderBottomColor: 'rgba(243, 244, 246, 1)',
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const atTop = currentScrollY < 10;
+      let styleChanged = false;
 
+      // Update Top Status
+      if (atTop !== isAtTopRef.current) {
+        isAtTopRef.current = atTop;
+        styleChanged = true;
+      }
+
+      // Ensure NavBar is always visible
+      if (!isNavVisibleRef.current) {
+        isNavVisibleRef.current = true;
+        styleChanged = true;
+      }
+      
+      // Close dropdown menu when scrolling down
       if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-        // Scrolling down: hide nav and close any open menus
-        setIsNavVisible(false);
-        setMenuState({ active: null, switching: false });
-      } else if (currentScrollY < lastScrollY.current) {
-        // Scrolling up: show nav
-        setIsNavVisible(true);
+        if (menuState.active) {
+          setMenuState({ active: null, switching: false });
+        }
+      }
+
+      if (styleChanged) {
+        updateNavStyles(isAtTopRef.current, isNavVisibleRef.current, menuState.active);
       }
 
       lastScrollY.current = currentScrollY;
@@ -107,7 +157,12 @@ const NavBar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuState.active]); // Re-bind so the closure has the latest menuState
+
+  // Trigger update when menu opens/closes
+  useEffect(() => {
+    updateNavStyles(isAtTopRef.current, isNavVisibleRef.current, menuState.active);
+  }, [menuState.active]);
 
   const handleMouseEnter = (title, hasDropdown = true) => {
     clearTimeout(timeoutRef.current);
@@ -147,7 +202,7 @@ const NavBar = () => {
         className="fixed top-[64px] left-0 right-0 bottom-0 bg-black/20 backdrop-blur-sm z-[90] opacity-0 invisible pointer-events-none"
       />
 
-      <nav className={`fixed top-0 left-0 right-0 z-[100] bg-[#f5f3eb]/95 backdrop-blur-sm border-b border-gray-100 transition-transform duration-300 ease-in-out ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-[100] backdrop-blur-sm border-b" style={{ backgroundColor: 'rgba(245, 243, 235, 0)', borderBottomColor: 'rgba(243, 244, 246, 0)' }}>
         <div className="flex items-center justify-between px-10 h-[64px]">
           {/* Left section: Logo and Links */}
           <div className="flex items-center gap-10 h-full">
@@ -162,7 +217,7 @@ const NavBar = () => {
               {/* FEATURES */}
               <NavItem title={navData.features.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-16">
+                  <div className="w-[70%] py-10 pl-16 pr-10 flex gap-16">
                     <div className="flex flex-col gap-5 min-w-[220px]">
                       <h3 className="text-gray-400 text-[12px] font-normal uppercase tracking-wider mb-1">Core Operations</h3>
                       {navData.features.sections.core.map((item, idx) => (
@@ -204,7 +259,7 @@ const NavBar = () => {
                       </div>
                     </div>
                   </div>
-                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col `}>
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} py-10 px-10 border-l border-gray-100 flex flex-col `}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
@@ -221,7 +276,7 @@ const NavBar = () => {
               {/* SOLUTIONS */}
               <NavItem title={navData.solutions.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-16">
+                  <div className="w-[70%] py-10 pl-16 pr-10 flex gap-16">
                     <div className="flex flex-col gap-4 min-w-[250px]">
                       <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">By Venue Type</h3>
                       {navData.solutions.sections.venues.map((item, idx) => (
@@ -241,7 +296,7 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} py-10 px-10 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
@@ -258,7 +313,7 @@ const NavBar = () => {
               {/* MULTI-BRANCH */}
               <NavItem title={navData.multiBranch.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-12">
+                  <div className="w-[70%] py-10 pl-16 pr-10 flex gap-12">
                     <div className="flex flex-col gap-5 min-w-[220px]">
                       <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Command Center</h3>
                       {navData.multiBranch.sections.control.map((item, idx) => (
@@ -287,7 +342,7 @@ const NavBar = () => {
                       ))}
                     </div>
                   </div>
-                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} py-10 px-10 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
@@ -304,14 +359,14 @@ const NavBar = () => {
               {/* BLOG */}
               <NavItem title={navData.blog.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[30%] p-8 flex flex-col justify-between">
+                  <div className="w-[30%] py-10 pl-16 pr-10 flex flex-col justify-between">
                     <div>
                       <h4 className="text-[20px] font-medium text-black">{navData.blog.info.title}</h4>
                       <p className="text-gray-400 text-[13px] mt-2">{navData.blog.info.description}</p>
                     </div>
                     <a href="#" className="text-[14px] font-medium text-black hover:underline mt-8 block">{navData.blog.info.link}</a>
                   </div>
-                  <div className={`w-[70%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 grid grid-cols-3 gap-4`}>
+                  <div className={`w-[70%] ${DROPDOWN_FEATURED_BG} py-10 px-10 border-l border-gray-100 grid grid-cols-3 gap-4`}>
                     {navData.blog.articles.map((item, idx) => (
                       <div key={idx} className="group/feature cursor-pointer flex flex-col gap-3">
                         <div className="rounded-lg overflow-hidden border border-gray-200">
@@ -329,7 +384,7 @@ const NavBar = () => {
               {/* RESEARCH */}
               <NavItem title={navData.research.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-16">
+                  <div className="w-[70%] py-10 pl-16 pr-10 flex gap-16">
                     <div className="flex flex-col gap-4 min-w-[250px]">
                       <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Industry Data</h3>
                       {navData.research.sections.insights.map((item, idx) => (
@@ -356,7 +411,7 @@ const NavBar = () => {
                       </div>
                     </div>
                   </div>
-                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} py-10 px-10 border-l border-gray-100 flex flex-col`}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200 bg-gray-100">

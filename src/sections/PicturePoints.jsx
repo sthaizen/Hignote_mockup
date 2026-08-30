@@ -51,7 +51,7 @@ const tabs = [
 ];
 
 const PicturePoints = () => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
   const contentRefs = useRef([]);
   const containerRef = useRef(null);
 
@@ -79,7 +79,7 @@ const PicturePoints = () => {
   }, { dependencies: [activeTab], scope: containerRef });
 
   return (
-    <div ref={containerRef} className="w-full bg-[#f5f3eb] pt-24 px-6 md:px-12 lg:px-24 font-['Inter',sans-serif] border-t border-gray-100">
+    <div ref={containerRef} className="w-full bg-[#f5f3eb] pt-12 px-6 md:px-12 lg:px-24 font-['Inter',sans-serif] border-t border-gray-100">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-22 flex flex-col md:flex-row md:items-end justify-between">
           <div>

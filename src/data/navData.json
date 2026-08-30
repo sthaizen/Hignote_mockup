@@ -3,27 +3,61 @@
     "title": "Features",
     "sections": {
       "core": [
-        { "title": "Restaurant Operations", "description": "Manage daily tasks effortlessly" },
-        { "title": "POS & Billing", "description": "Fast and reliable point of sale" },
-        { "title": "KOT & Order Processing", "description": "Seamless kitchen communication" }
+        {
+          "title": "Restaurant Operations",
+          "description": "Manage daily tasks effortlessly"
+        },
+        {
+          "title": "POS & Billing",
+          "description": "Fast and reliable point of sale"
+        },
+        {
+          "title": "KOT & Order Processing",
+          "description": "Seamless kitchen communication"
+        }
       ],
       "growth": [
-        { "title": "QR Ordering", "description": "Contactless dining experience" },
-        { "title": "Smart Inventory", "description": "Real-time stock tracking" },
-        { "title": "Staff Management", "description": "Rosters, roles, and payroll" },
-        { "title": "Customer Management", "description": "CRM and loyalty programs" }
+        {
+          "title": "QR Ordering",
+          "description": "Contactless dining experience"
+        },
+        {
+          "title": "Smart Inventory",
+          "description": "Real-time stock tracking"
+        },
+        {
+          "title": "Staff Management",
+          "description": "Rosters, roles, and payroll"
+        },
+        {
+          "title": "Customer Management",
+          "description": "CRM and loyalty programs"
+        }
       ],
       "insights": [
-        { "title": "Sales & Business Insights", "description": "Data-driven decisions" },
-        { "title": "RestroBuddy", "description": "AI assistant for your restaurant", "isNew": true }
+        {
+          "title": "Sales & Business Insights",
+          "description": "Data-driven decisions"
+        },
+        {
+          "title": "RestroBuddy",
+          "description": "AI assistant for your restaurant",
+          "isNew": true
+        }
       ],
       "links": [
-        { "title": "All Features", "url": "#" },
-        { "title": "Interactive Demo", "url": "#" }
+        {
+          "title": "All Features",
+          "url": "#"
+        },
+        {
+          "title": "Interactive Demo",
+          "url": "#"
+        }
       ]
     },
     "featured": {
-      "image": "/Resmmgt.png",
+      "image": "/Rest.png",
       "text": "Experience lightning-fast POS & Billing tailored for high-volume restaurants in Nepal →"
     }
   },
@@ -31,15 +65,36 @@
     "title": "Solutions",
     "sections": {
       "venues": [
-        { "title": "Dine-In Restaurants", "description": "Elevate the table experience" },
-        { "title": "Cafés & Bakeries", "description": "Speed and counter service" },
-        { "title": "Quick-Service Restaurants", "description": "High volume, fast turnaround" },
-        { "title": "Bars & Lounges", "description": "Tab management and drinks" }
+        {
+          "title": "Dine-In Restaurants",
+          "description": "Elevate the table experience"
+        },
+        {
+          "title": "Cafés & Bakeries",
+          "description": "Speed and counter service"
+        },
+        {
+          "title": "Quick-Service Restaurants",
+          "description": "High volume, fast turnaround"
+        },
+        {
+          "title": "Bars & Lounges",
+          "description": "Tab management and drinks"
+        }
       ],
       "scale": [
-        { "title": "Cloud Kitchens", "description": "Delivery-first operations" },
-        { "title": "Hotels & Hospitality", "description": "Room service integration" },
-        { "title": "Growing Restaurant Groups", "description": "Multi-location management" }
+        {
+          "title": "Cloud Kitchens",
+          "description": "Delivery-first operations"
+        },
+        {
+          "title": "Hotels & Hospitality",
+          "description": "Room service integration"
+        },
+        {
+          "title": "Growing Restaurant Groups",
+          "description": "Multi-location management"
+        }
       ]
     },
     "featured": {
@@ -51,16 +106,34 @@
     "title": "Multi-Branch",
     "sections": {
       "control": [
-        { "title": "Centralized Command Center", "description": "Manage all locations from one dashboard" },
-        { "title": "Branch Performance", "description": "Compare metrics across outlets" }
+        {
+          "title": "Centralized Command Center",
+          "description": "Manage all locations from one dashboard"
+        },
+        {
+          "title": "Branch Performance",
+          "description": "Compare metrics across outlets"
+        }
       ],
       "management": [
-        { "title": "Unified Menu Management", "description": "Update prices everywhere instantly" },
-        { "title": "Inventory Across Locations", "description": "Track transfers and stock" }
+        {
+          "title": "Unified Menu Management",
+          "description": "Update prices everywhere instantly"
+        },
+        {
+          "title": "Inventory Across Locations",
+          "description": "Track transfers and stock"
+        }
       ],
       "admin": [
-        { "title": "Staff & Role Controls", "description": "Global permissions management" },
-        { "title": "Consolidated Reporting", "description": "Group-wide financial insights" }
+        {
+          "title": "Staff & Role Controls",
+          "description": "Global permissions management"
+        },
+        {
+          "title": "Consolidated Reporting",
+          "description": "Group-wide financial insights"
+        }
       ]
     },
     "featured": {
@@ -94,15 +167,31 @@
     "title": "Research",
     "sections": {
       "insights": [
-        { "title": "Restaurant Industry Insights", "description": "Data from over 500+ venues" },
-        { "title": "Consumer Dining Trends", "description": "What customers expect today" }
+        {
+          "title": "Restaurant Industry Insights",
+          "description": "Data from over 500+ venues"
+        },
+        {
+          "title": "Consumer Dining Trends",
+          "description": "What customers expect today"
+        }
       ],
       "benchmarks": [
-        { "title": "Operational Benchmarks", "description": "Compare your metrics" },
-        { "title": "Restaurant Technology", "description": "The future of dining tech" }
+        {
+          "title": "Operational Benchmarks",
+          "description": "Compare your metrics"
+        },
+        {
+          "title": "Restaurant Technology",
+          "description": "The future of dining tech"
+        }
       ],
       "resources": [
-        { "title": "Reports & Guides", "isLink": true, "url": "#" }
+        {
+          "title": "Reports & Guides",
+          "isLink": true,
+          "url": "#"
+        }
       ]
     },
     "featured": {

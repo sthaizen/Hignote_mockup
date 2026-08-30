@@ -67,7 +67,7 @@ const AccordionItem = ({ plan, isOpen, toggleAccordion }) => {
   }, [isOpen]);
 
   return (
-    <div className={`bg-[#ffffff] rounded-2xl overflow-hidden transition-all duration-500 border border-[#eeeeee] ${isOpen ? 'shadow-sm' : ''}`}>
+    <div className={`bg-[#f4f0ec] rounded-2xl overflow-hidden transition-all duration-500 border border-[#eeeeee] ${isOpen ? 'shadow-sm' : ''}`}>
       {/* Header (always visible) */}
       <div
         onClick={() => toggleAccordion(plan.id)}
@@ -161,7 +161,7 @@ const PricingComp = () => {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f6f6f6] font-['DM_Sans',sans-serif] px-4 md:px-8 py-32">
+    <section ref={sectionRef} className="w-full bg-[#f5f3eb] font-['DM_Sans',sans-serif] px-4 md:px-8 py-32">
       <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-8 items-stretch">
 
         {/* Left Column */}

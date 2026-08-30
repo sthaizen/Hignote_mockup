@@ -359,6 +359,7 @@ const OnePlatform = () => {
           </div>
         </div>
 
+        <div className="w-full h-px bg-black/5 mt-16" />
       </div>
     </div>
   );
