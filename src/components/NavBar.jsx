@@ -159,22 +159,22 @@ const NavBar = () => {
             {/* Navigation Links */}
             <div className="hidden lg:flex items-center gap-1 h-full">
 
-              {/* PRODUCTS */}
-              <NavItem title={navData.products.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
+              {/* FEATURES */}
+              <NavItem title={navData.features.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-20">
-                    <div className="flex flex-col gap-6 min-w-[200px]">
-                      <h3 className="text-gray-400 text-[12px] font-normal uppercase  mb-1">Platform</h3>
-                      {navData.products.sections.platform.map((item, idx) => (
+                  <div className="w-[70%] p-8 flex gap-16">
+                    <div className="flex flex-col gap-5 min-w-[220px]">
+                      <h3 className="text-gray-400 text-[12px] font-normal uppercase tracking-wider mb-1">Core Operations</h3>
+                      {navData.features.sections.core.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer">
-                          <h4 className="text-[28px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
-                          <p className="text-gray-500 text-[13px] ">{item.description}</p>
+                          <h4 className="text-[18px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[13px] mt-0.5">{item.description}</p>
                         </div>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-3 min-w-[200px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Models</h3>
-                      {navData.products.sections.models.map((item, idx) => (
+                    <div className="flex flex-col gap-4 min-w-[220px]">
+                      <h3 className="text-gray-400 text-[12px] font-normal uppercase tracking-wider mb-1">Growth & Management</h3>
+                      {navData.features.sections.growth.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer flex items-center">
                           <div>
                             <h4 className="text-[14px] font-medium text-black group-hover/link:text-gray-600 transition-colors">
@@ -184,25 +184,34 @@ const NavBar = () => {
                           </div>
                         </div>
                       ))}
-                      <div className="group/link cursor-pointer mt-2">
-                        <h4 className="text-[14px] font-medium text-black hover:underline">Models Overview →</h4>
+                    </div>
+                    <div className="flex flex-col gap-4 min-w-[200px]">
+                      <h3 className="text-gray-400 text-[12px] font-normal uppercase tracking-wider mb-1">Insights & AI</h3>
+                      {navData.features.sections.insights.map((item, idx) => (
+                        <div key={idx} className="group/link cursor-pointer flex items-center">
+                          <div>
+                            <h4 className="text-[14px] font-medium text-black group-hover/link:text-gray-600 transition-colors">
+                              {item.title} {item.isNew && <NewTag />}
+                            </h4>
+                            <p className="text-gray-400 text-[12px] mt-0.5">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="mt-4 pt-4 border-t border-gray-200/60 flex flex-col gap-2">
+                        {navData.features.sections.links.map((item, idx) => (
+                          <a key={idx} href={item.url} className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors">{item.title} →</a>
+                        ))}
                       </div>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Product</h3>
-                      {navData.products.sections.productLinks.map((item, idx) => (
-                        <a key={idx} href={item.url} className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors">{item.title}</a>
-                      ))}
-                    </div>
                   </div>
-                  <div className={`w-[30%]  ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col `}>
+                  <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col `}>
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
-                        <img src={navData.products.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
+                        <img src={navData.features.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
-                        {navData.products.featured.text}
+                        {navData.features.featured.text}
                       </p>
                     </div>
                   </div>
@@ -212,23 +221,23 @@ const NavBar = () => {
               {/* SOLUTIONS */}
               <NavItem title={navData.solutions.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-24">
+                  <div className="w-[70%] p-8 flex gap-16">
                     <div className="flex flex-col gap-4 min-w-[250px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Deploy</h3>
-                      {navData.solutions.sections.deploy.map((item, idx) => (
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">By Venue Type</h3>
+                      {navData.solutions.sections.venues.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer">
                           <h4 className="text-[18px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
                           <p className="text-gray-500 text-[13px] mt-1">{item.description}</p>
                         </div>
                       ))}
-                      <div className="group/link cursor-pointer mt-4">
-                        <h4 className="text-[14px] font-medium text-black hover:underline">See deployment options →</h4>
-                      </div>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">By Industry</h3>
-                      {navData.solutions.sections.industries.map((item, idx) => (
-                        <a key={idx} href="#" className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors">{item}</a>
+                    <div className="flex flex-col gap-4 min-w-[250px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">By Scale</h3>
+                      {navData.solutions.sections.scale.map((item, idx) => (
+                        <div key={idx} className="group/link cursor-pointer">
+                          <h4 className="text-[16px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[13px] mt-0.5">{item.description}</p>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -246,32 +255,35 @@ const NavBar = () => {
                 </div>
               </NavItem>
 
-              {/* RESOURCES */}
-              <NavItem title={navData.resources.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
+              {/* MULTI-BRANCH */}
+              <NavItem title={navData.multiBranch.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
-                  <div className="w-[70%] p-8 flex gap-24">
-                    <div className="flex flex-col gap-4 min-w-[200px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Insights</h3>
-                      {navData.resources.sections.insights.map((item, idx) => (
+                  <div className="w-[70%] p-8 flex gap-12">
+                    <div className="flex flex-col gap-5 min-w-[220px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Command Center</h3>
+                      {navData.multiBranch.sections.control.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer">
-                          <h4 className="text-[18px] font-medium text-black hover:text-gray-600 transition-colors">{item.title}</h4>
+                          <h4 className="text-[18px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[13px] mt-1">{item.description}</p>
                         </div>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-3 min-w-[150px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">For Developers</h3>
-                      {navData.resources.sections.forDevelopers.map((item, idx) => (
-                        <a key={idx} href="#" className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors flex items-center">
-                          {item.title} {item.external && <span className="ml-1 text-gray-400 text-xs">↗</span>}
-                        </a>
+                    <div className="flex flex-col gap-4 min-w-[200px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Operations</h3>
+                      {navData.multiBranch.sections.management.map((item, idx) => (
+                        <div key={idx} className="group/link cursor-pointer">
+                          <h4 className="text-[15px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[12px] mt-0.5">{item.description}</p>
+                        </div>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Connect</h3>
-                      {navData.resources.sections.connect.map((item, idx) => (
-                        <a key={idx} href="#" className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors flex items-center">
-                          {item.title} {item.external && <span className="ml-1 text-gray-400 text-xs">↗</span>}
-                        </a>
+                    <div className="flex flex-col gap-4 min-w-[200px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Administration</h3>
+                      {navData.multiBranch.sections.admin.map((item, idx) => (
+                        <div key={idx} className="group/link cursor-pointer">
+                          <h4 className="text-[15px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[12px] mt-0.5">{item.description}</p>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -279,10 +291,10 @@ const NavBar = () => {
                     <h3 className="text-gray-500 text-xs font-normal mb-6">Featured</h3>
                     <div className="group/feature cursor-pointer flex flex-col gap-3 overflow-hidden">
                       <div className="rounded-lg overflow-hidden border border-gray-200">
-                        <img src={navData.resources.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
+                        <img src={navData.multiBranch.featured.image} alt="Featured" className={`${FEATURED_IMAGE_WIDTH} ${FEATURED_IMAGE_HEIGHT} object-cover group-hover/feature:scale-105 transition-transform duration-500`} />
                       </div>
                       <p className="text-[14px] font-medium leading-relaxed group-hover/feature:text-gray-600 transition-colors">
-                        {navData.resources.featured.text}
+                        {navData.multiBranch.featured.text}
                       </p>
                     </div>
                   </div>
@@ -318,40 +330,30 @@ const NavBar = () => {
               <NavItem title={navData.research.title} activeMenu={activeMenu} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} isSwitching={isSwitching}>
                 <div className="flex w-full">
                   <div className="w-[70%] p-8 flex gap-16">
-                    <div className="flex flex-col gap-4 min-w-[200px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Research</h3>
-                      {navData.research.sections.research.map((item, idx) => (
+                    <div className="flex flex-col gap-4 min-w-[250px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Industry Data</h3>
+                      {navData.research.sections.insights.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer">
-                          <h4 className="text-[20px] font-medium text-black hover:text-gray-600 transition-colors">{item.title}</h4>
-                          {item.description && <p className="text-gray-500 text-[13px] mt-1">{item.description}</p>}
+                          <h4 className="text-[18px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[13px] mt-1">{item.description}</p>
                         </div>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-3 min-w-[200px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Explorations</h3>
-                      {navData.research.sections.explorations.map((item, idx) => (
-                        <div key={idx} className={`group/link cursor-pointer ${item.isLink ? 'mt-2' : ''}`}>
-                          <h4 className={`text-[14px] font-medium text-black ${item.isLink ? 'hover:underline' : 'group-hover/link:text-gray-600 transition-colors'}`}>{item.title}</h4>
-                          {item.description && <p className="text-gray-400 text-[12px] mt-0.5">{item.description}</p>}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex flex-col gap-3 min-w-[200px]">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Initiatives</h3>
-                      {navData.research.sections.initiatives.map((item, idx) => (
+                    <div className="flex flex-col gap-4 min-w-[250px]">
+                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Metrics</h3>
+                      {navData.research.sections.benchmarks.map((item, idx) => (
                         <div key={idx} className="group/link cursor-pointer">
-                          <h4 className="text-[14px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
-                          <p className="text-gray-400 text-[12px] mt-0.5">{item.description}</p>
+                          <h4 className="text-[15px] font-medium text-black group-hover/link:text-gray-600 transition-colors">{item.title}</h4>
+                          <p className="text-gray-500 text-[13px] mt-0.5">{item.description}</p>
                         </div>
                       ))}
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-gray-400 text-xs font-normal uppercase tracking-wider mb-2">Resources</h3>
-                      {navData.research.sections.resourcesLinks.map((item, idx) => (
-                        <a key={idx} href="#" className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors flex items-center">
-                          {item.title} {item.external && <span className="ml-1 text-gray-400 text-xs">↗</span>}
-                        </a>
-                      ))}
+                      <div className="mt-2 pt-4 border-t border-gray-200/50 flex flex-col gap-2">
+                        {navData.research.sections.resources.map((item, idx) => (
+                          <a key={idx} href={item.url} className="text-[14px] font-medium text-black hover:text-gray-600 transition-colors flex items-center">
+                            {item.title} {item.external && <span className="ml-1 text-gray-400 text-xs">↗</span>}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <div className={`w-[30%] ${DROPDOWN_FEATURED_BG} p-8 border-l border-gray-100 flex flex-col`}>

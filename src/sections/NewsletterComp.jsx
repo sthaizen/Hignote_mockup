@@ -23,11 +23,11 @@ const NewsletterComp = () => {
           </div>
 
           <h4 className="text-[30px] font-medium leading-[1.2] text-[#000000] mb-12 tracking-tight">
-            Stay Ahead,<br />Build Smarter
+            Stay Ahead<br />of the Rush
           </h4>
 
           <p className="text-[15px] text-[#60646C] leading-relaxed max-w-[320px]">
-            Get one high-impact idea each week to strengthen your identity, messaging, and momentum.
+            Get weekly tips on restaurant management, menu engineering, and local market trends in Nepal.
           </p>
         </div>
 

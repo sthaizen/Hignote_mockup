@@ -70,7 +70,7 @@ const CoolSection = () => {
           <img
             ref={bgImageRef}
             src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Cool Man Background"
+            alt="Bustling Restaurant Background"
             className="w-full h-full object-cover origin-center"
           />
           {/* Subtle gradient overlay to ensure text readability */}
@@ -84,15 +84,15 @@ const CoolSection = () => {
           <div className="cool-col w-full lg:w-[45%] flex flex-col justify-center">
             <div className="cool-content flex items-center gap-3 text-white/80 text-[12px] font-medium tracking-widest uppercase mb-6">
               <span className="dot-blink w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>
-              <span>THE NEXT STEP</span>
+              <span>READY TO SCALE?</span>
             </div>
 
             <h2 className="cool-content text-[50px] md:text-[64px] lg:text-[75px] leading-[0.95] font-medium tracking-tight mb-8">
-              LET'S BUILD<br />MOMENTUM
+              GROW YOUR<br />RESTAURANT
             </h2>
 
             <p className="cool-content text-[15px] md:text-[16px] text-white/80  max-w-[380px] mb-3">
-              A focused build process that turns ideas into momentum — without chaos, delays, or guesswork.
+              A complete ecosystem that turns chaotic kitchens into streamlined success stories — without the guesswork.
             </p>
 
             <div className="cool-content">
@@ -119,9 +119,9 @@ const CoolSection = () => {
                 Proven<br />Outcome
               </h3>
               <ul className="cool-slide-left flex flex-col gap-1 text-[16px] text-white/90 mt-12">
-                <li>120+ product & brand launches</li>
-                <li>97% on-time delivery rate</li>
-                <li>+38% average lift in engagement</li>
+                <li>500+ restaurants powered</li>
+                <li>99.9% system uptime</li>
+                <li>+30% average table turnover</li>
               </ul>
             </div>
 
@@ -131,12 +131,12 @@ const CoolSection = () => {
               <div className="hidden md:block absolute left-0 top-2 bottom-1 w-[1px] bg-white"></div>
 
               <h3 className="cool-slide-left text-[32px] md:text-[42px] font-medium leading-[1.1] tracking-tight mb-0">
-                Engagement<br />Timeline
+                Deployment<br />Timeline
               </h3>
               <ul className="cool-slide-left flex flex-col gap-1 text-[16px] text-white/90 mt-12">
-                <li>24-hour first response</li>
-                <li>72-hour kickoff after intro call</li>
-                <li>14-day first deliverable window</li>
+                <li>24-hour menu ingestion</li>
+                <li>3-day hardware setup</li>
+                <li>1-week full staff training</li>
               </ul>
             </div>
 

@@ -76,17 +76,17 @@ const CARD_CONTAINER_STYLE = `rounded-[12px] p-[32px] pb-0 overflow-hidden relat
 
 const OnePlatform = () => {
   return (
-    <div className="relative z-20 w-full bg-[#f5f3eb] pt-32 pb-2 px-6 md:px-12 lg:px-24 -mt-24 md:-mt-32">
+    <div className="relative z-20 w-full bg-[#f5f3eb] pt-32 pb-2 px-6 md:px-12 lg:px-24 -mt-8">
       <div className="max-w-[1500px] mx-auto">
 
         {/* Title Section */}
         <div className="mb-22">
           <h2 className="font-display max-w-7xl text-[24px] lg:text-[54px] text-black leading-[1.1] font-medium tracking-tight">
-            Everything you need to launch fast,<br className="hidden md:block" /> differentiate, and keep innovating
+            Everything your restaurant needs<br className="hidden md:block" /> to scale, adapt, and succeed.
           </h2>
           <p className="max-w-lg pt-4 text-[18px] opacity-60 text-black">
-            Each product is powerful on its own.<br />
-            Together, they unlock what legacy systems can't.
+            Each module is powerful on its own.<br />
+            Together, they unlock what legacy POS systems can't.
           </p>
         </div>
 
@@ -322,10 +322,10 @@ const OnePlatform = () => {
         {/* Unified Platform Header Section */}
         <div className="mt-16 text-center mb-8 relative z-10">
           <h2 className="font-display text-4xl md:text-5xl lg:text-[55px] text-black leading-tight font-medium tracking-tight mb-2">
-            Built on a Unified Platform
+            Built on a Unified Restaurant Platform
           </h2>
           <p className="mx-auto max-w-lg text-sm opacity-60 md:text-base text-black font-medium">
-            Most platforms were assembled. Highnote was built as one.
+            Most POS systems are fragmented. RestroHub was built as one.
           </p>
         </div>
 
@@ -336,7 +336,7 @@ const OnePlatform = () => {
             <Timer className="w-[30px] h-[30px] text-black mb-[16px] stroke-[1.5]" />
             <h3 className="text-[19px] font-medium text-black">Launch Faster</h3>
             <p className="mt-[8px] max-w-[235px] text-[14px]  opacity-60 text-black">
-              Go live without coordinating multiple providers or waiting on fragmented systems.
+              Go live without waiting on complex, fragmented restaurant management systems.
             </p>
           </div>
 
@@ -345,7 +345,7 @@ const OnePlatform = () => {
             <Users className="w-[30px] h-[30px] text-black mb-[16px] stroke-[1.5]" />
             <h3 className="text-[19px] font-medium text-black">Differentiate Easily</h3>
             <p className="mt-[8px] max-w-[235px] text-[14px]  opacity-60 text-black">
-              Design experiences around your customers, not platform constraints.
+              Design dining experiences around your guests, not platform constraints.
             </p>
           </div>
 
@@ -354,7 +354,7 @@ const OnePlatform = () => {
             <Wand2 className="w-[30px] h-[30px] text-black mb-[16px] stroke-[1.5]" />
             <h3 className="text-[19px] font-medium text-black">Keep Innovating</h3>
             <p className="mt-[8px] max-w-[235px] text-[14px]  opacity-60 text-black">
-              Add new capabilities and expand into new products without rebuilding your foundation.
+              Expand into new branches and menus without ever rebuilding your foundation.
             </p>
           </div>
         </div>

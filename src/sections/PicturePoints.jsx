@@ -79,12 +79,23 @@ const PicturePoints = () => {
   }, { dependencies: [activeTab], scope: containerRef });
 
   return (
-    <div ref={containerRef} className="w-full bg-[#f5f3eb] py-24 px-6 md:px-12 lg:px-24 font-['Inter',sans-serif] border-t border-gray-100">
+    <div ref={containerRef} className="w-full bg-[#f5f3eb] pt-24 px-6 md:px-12 lg:px-24 font-['Inter',sans-serif] border-t border-gray-100">
       <div className="max-w-[1400px] mx-auto">
-        <h3 className="text-center text-[28px] lg:text-[48px] text-[#212121] font-normal mb-10">
-          Our models. Your business.
-        </h3>
+        <div className="mb-22 flex flex-col md:flex-row md:items-end justify-between">
+          <div>
+            <h2 className="font-display max-w-7xl text-[24px] lg:text-[54px] text-black leading-[1.1] font-normal tracking-tight">
+              Run your resturant smarter,
+              <br className="hidden md:block" />
+              <span className="opacity-40">with one platform build for every shift</span>
+            </h2>
 
+            <p className="max-w-xl pt-4 text-[18px] opacity-60 text-black">
+              Restrohub helps you streamline operations, delight customers, and grow your business with confidence.
+            </p>
+          </div>
+          {/* Custom Gradient Progress Tracker for Tabs */}
+
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-start">
 
           {/* Left Side: Image container */}

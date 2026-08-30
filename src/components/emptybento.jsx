@@ -10,13 +10,13 @@ const EmptyBento = () => {
         {/* Title Section */}
         <div className="mb-[64px]">
           <h2 className="font-display max-w-7xl text-4xl lg:text-[54px] text-black leading-[1.1] font-medium tracking-tight">
-            One platform for all of finance.<br />
-            <span className="text-black/50">Agents for every workflow, working 24/7.</span>
+            One platform for your entire restaurant operations.<br />
+            <span className="text-black/50">Automate orders, KOTs, and inventory in real-time.</span>
           </h2>
 
           <div className="flex flex-wrap gap-[12px] mt-[32px]">
             <button className="px-[20px] py-[12px] bg-[#dcf335] text-black font-medium rounded-[8px] text-[15px] hover:bg-[#cde42a] transition-colors shadow-sm">
-              Switch in days, not months
+              Launch Your Restro Today
             </button>
             <button className="px-[20px] py-[12px] bg-[#f4f2f0] text-black font-medium rounded-[8px] text-[15px] hover:bg-[#e8e6e3] transition-colors border border-[#e5e3e1]">
               View Demo
@@ -32,7 +32,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[27px] font-medium text-gray-900 leading-tight tracking-tight">
-                Procure to pay <span className="text-black/60 font-normal">without <br /> chasing approvals</span>
+                Inventory & Supply Chain <span className="text-black/60 font-normal">track local <br /> suppliers and stock effortlessly</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ const EmptyBento = () => {
               </div>
             </div>
             <div className="relative w-full mt-[8px] flex items-end justify-center ml-[30px] z-10">
-              <img src="/ll.png" alt="Procure to pay" className="w-[110%] max-w-none object-cover rounded-t-[12px]" />
+              <img src="/ll.png" alt="Inventory and Supply Chain" className="w-[110%] max-w-none object-cover rounded-t-[12px]" />
             </div>
 
             {/* Fade out overlays tied to the card edges */}
@@ -54,7 +54,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[27px] font-medium text-gray-900 leading-tight tracking-tight">
-                Cards & Expenses <span className="text-black/60 font-normal">that <br /> handle themselves</span>
+                Table & Order Management <span className="text-black/60 font-normal">that <br /> handles peak hours flawlessly</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#e5e4da] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ const EmptyBento = () => {
               </div>
             </div>
             <div className="relative w-full mt-[8px] flex items-end justify-center ml-[40px] z-10">
-              <img src="/NN.png" alt="Cards & Expenses" className="w-[110%] max-w-none object-cover rounded-t-[12px]" />
+              <img src="/NN.png" alt="Table & Order Management" className="w-[110%] max-w-none object-cover rounded-t-[12px]" />
             </div>
           </div>
 
@@ -72,7 +72,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                Accounting automation <span className="text-black/60 font-normal">eliminates month-end madness</span>
+                Digital KOT & Kitchen Sync <span className="text-black/60 font-normal">ensures zero delays between hall and kitchen</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@ const EmptyBento = () => {
               </div>
             </div>
             <div className="relative w-full mt-[8px] flex items-end justify-center ml-[20px] z-10">
-              <img src="/AA.png" alt="Accounting automation" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
+              <img src="/AA.png" alt="Digital KOT and Kitchen Sync" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
             </div>
 
             {/* Fade out overlays tied to the card edges */}
@@ -94,7 +94,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                Banking <span className="text-black/60 font-normal">that flows money <br /> to the highest return</span>
+                Multi-branch Control <span className="text-black/60 font-normal">to manage <br /> outlets across Kathmandu and beyond</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ const EmptyBento = () => {
               </div>
             </div>
             <div className="relative w-full mt-[8px] flex items-end justify-center ml-[10px] z-10">
-              <img src="/SS 1.png" alt="Banking" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
+              <img src="/SS 1.png" alt="Multi-branch Control" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
             </div>
 
             {/* Fade out overlays tied to the card edges */}
@@ -116,7 +116,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                200+ Integrations <span className="text-black/60 font-normal">to the <br /> tools you already use</span>
+                Seamless POS & Payments <span className="text-black/60 font-normal">like <br /> eSewa, Fonepay, and more</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +125,7 @@ const EmptyBento = () => {
               </div>
             </div>
             <div className="relative w-full flex items-end justify-center ml-[10px] z-10">
-              <img src="/lll.png" alt="Integrations" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
+              <img src="/lll.png" alt="Seamless POS and Payments" className="w-[110%] max-w-none object-contain rounded-t-[12px]" />
             </div>
 
             {/* Fade out overlays tied to the card edges */}

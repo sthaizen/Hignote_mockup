@@ -22,10 +22,14 @@ import NewsletterComp from './sections/NewsletterComp';
 import OnePlatform from './sections/OnePlatform';
 import PicturePoints from './sections/PicturePoints';
 import UserFeedback from './sections/UserFeedback';
+import ConnectCat from './sections/ConnectCat';
+import Installation from './sections/installitation';
+import Footer from './sections/Footer';
 
 import NavBar from './components/NavBar';
 import Main from './components/main';
 import EmptyBento from './components/emptybento';
+import TwoBentos from './components/2bentos';
 
 const Home = () => {
   const location = useLocation();
@@ -91,10 +95,12 @@ const Home = () => {
         {/* <FounderMessage /> */}
         <HeroComp />
         <EmptyBento />
-        <OnePlatform />
-        <UserFeedback />
         <ReviewsSection />
         <PicturePoints />
+
+        <OnePlatform />
+        {/* <CoolSection /> */}
+        <UserFeedback />
         {/* <PointOfViewComp /> */}
 
         {/* <InsightsComp /> */}
@@ -103,10 +109,12 @@ const Home = () => {
         {/* <TeamComp /> */}
         {/* <PricingComp /> */}
         {/* <BentoComponent /> */}
-        <NewsletterComp />
-
-        <CoolSection />
+        {/* <NewsletterComp /> */}
+        {/* 
+        <TwoBentos /> */}
         <ProjectComp />
+        {/* <Footer /> */}
+
       </div>
 
     </ReactLenis>

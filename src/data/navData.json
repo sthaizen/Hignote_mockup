@@ -1,219 +1,113 @@
 {
-  "products": {
+  "features": {
     "title": "Features",
     "sections": {
-      "platform": [
-        {
-          "title": "North",
-          "description": "Enterprise-ready AI for business"
-        },
-        {
-          "title": "Compass",
-          "description": "Intelligent search and discovery"
-        }
+      "core": [
+        { "title": "Restaurant Operations", "description": "Manage daily tasks effortlessly" },
+        { "title": "POS & Billing", "description": "Fast and reliable point of sale" },
+        { "title": "KOT & Order Processing", "description": "Seamless kitchen communication" }
       ],
-      "models": [
-        {
-          "title": "Command",
-          "description": "Generative language models",
-          "isNew": true
-        },
-        {
-          "title": "Transcribe",
-          "description": "Speech recognition model",
-          "isNew": true
-        },
-        {
-          "title": "North Mini Code",
-          "description": "Agentic coding model",
-          "isNew": true
-        },
-        {
-          "title": "Embed",
-          "description": "Search and discovery model"
-        },
-        {
-          "title": "Rerank",
-          "description": "Semantic search ranking"
-        }
+      "growth": [
+        { "title": "QR Ordering", "description": "Contactless dining experience" },
+        { "title": "Smart Inventory", "description": "Real-time stock tracking" },
+        { "title": "Staff Management", "description": "Rosters, roles, and payroll" },
+        { "title": "Customer Management", "description": "CRM and loyalty programs" }
       ],
-      "productLinks": [
-        {
-          "title": "Products Overview",
-          "url": "#"
-        },
-        {
-          "title": "Total Cost of AI Ownership",
-          "url": "#"
-        },
-        {
-          "title": "Pricing",
-          "url": "#"
-        }
+      "insights": [
+        { "title": "Sales & Business Insights", "description": "Data-driven decisions" },
+        { "title": "RestroBuddy", "description": "AI assistant for your restaurant", "isNew": true }
+      ],
+      "links": [
+        { "title": "All Features", "url": "#" },
+        { "title": "Interactive Demo", "url": "#" }
       ]
     },
     "featured": {
-      "image": "/card_03_motion_blur.png",
-      "text": "Command: High-performance generative AI models for real-world applications →"
+      "image": "/Resmmgt.png",
+      "text": "Experience lightning-fast POS & Billing tailored for high-volume restaurants in Nepal →"
     }
   },
   "solutions": {
     "title": "Solutions",
     "sections": {
-      "deploy": [
-        {
-          "title": "Model Vault",
-          "description": "Dedicated model inference platform"
-        },
-        {
-          "title": "Private Deployments",
-          "description": "On-prem or isolated VPCs"
-        },
-        {
-          "title": "Security",
-          "description": "Protect your data at every stage"
-        }
+      "venues": [
+        { "title": "Dine-In Restaurants", "description": "Elevate the table experience" },
+        { "title": "Cafés & Bakeries", "description": "Speed and counter service" },
+        { "title": "Quick-Service Restaurants", "description": "High volume, fast turnaround" },
+        { "title": "Bars & Lounges", "description": "Tab management and drinks" }
       ],
-      "industries": [
-        "Financial Services",
-        "Public Sector",
-        "Technology",
-        "Telecommunications",
-        "Energy and Utilities",
-        "Healthcare and Life Sciences",
-        "Manufacturing"
+      "scale": [
+        { "title": "Cloud Kitchens", "description": "Delivery-first operations" },
+        { "title": "Hotels & Hospitality", "description": "Room service integration" },
+        { "title": "Growing Restaurant Groups", "description": "Multi-location management" }
       ]
     },
     "featured": {
       "image": "/Analatics.png",
-      "text": "Model Vault provides fully-isolated, performant inference with SaaS simplicity →"
+      "text": "Discover how top Cafés & Bakeries increase turnover by 30% with RestroHub →"
     }
   },
-  "resources": {
+  "multiBranch": {
     "title": "Multi-Branch",
     "sections": {
-      "insights": [
-        {
-          "title": "Customer Stories"
-        }
+      "control": [
+        { "title": "Centralized Command Center", "description": "Manage all locations from one dashboard" },
+        { "title": "Branch Performance", "description": "Compare metrics across outlets" }
       ],
-      "forDevelopers": [
-        {
-          "title": "Developers"
-        },
-        {
-          "title": "Models Overview"
-        },
-        {
-          "title": "Docs",
-          "external": true
-        },
-        {
-          "title": "Discord",
-          "external": true
-        },
-        {
-          "title": "LLM University"
-        }
+      "management": [
+        { "title": "Unified Menu Management", "description": "Update prices everywhere instantly" },
+        { "title": "Inventory Across Locations", "description": "Track transfers and stock" }
       ],
-      "connect": [
-        {
-          "title": "Partners"
-        },
-        {
-          "title": "Events"
-        },
-        {
-          "title": "Webinars",
-          "external": true
-        },
-        {
-          "title": "Merch Store",
-          "external": true
-        }
+      "admin": [
+        { "title": "Staff & Role Controls", "description": "Global permissions management" },
+        { "title": "Consolidated Reporting", "description": "Group-wide financial insights" }
       ]
     },
     "featured": {
-      "image": "/Nice.png",
-      "text": "How CoreWeave used Cohere North to transform its customer support in 90 days →"
+      "image": "/Multibranch support.png",
+      "text": "Scale your franchise seamlessly with our Centralized Command Center →"
     }
   },
   "blog": {
     "title": "Blog",
     "info": {
-      "title": "Blog",
-      "description": "The latest news, launches, and insights",
-      "link": "Read more →"
+      "title": "RestroHub Blog",
+      "description": "Insights, tips, and updates for restaurant owners",
+      "link": "View all articles →"
     },
     "articles": [
       {
         "image": "/bill.png",
-        "text": "The state of sovereign AI adoption in 2026 →"
+        "text": "Restaurant Operations: Maximizing efficiency during peak hours in Kathmandu →"
       },
       {
         "image": "/multi.png",
-        "text": "Cohere and the University of Waterloo launch partnership to strengthen Canada's AI talent pipeline →"
+        "text": "Growth & Profitability: How to price your menu for the modern Nepalese diner →"
       },
       {
-        "image": "/googles.png",
-        "text": "Introducing North Automations: Intelligent workflow orchestration →"
+        "image": "/Resmmgt.png",
+        "text": "Inventory & Cost Control: Reducing food waste and boosting margins →"
       }
     ]
   },
   "research": {
     "title": "Research",
     "sections": {
-      "research": [
-        {
-          "title": "Cohere Labs",
-          "description": "Cohere's ML research lab"
-        }
+      "insights": [
+        { "title": "Restaurant Industry Insights", "description": "Data from over 500+ venues" },
+        { "title": "Consumer Dining Trends", "description": "What customers expect today" }
       ],
-      "explorations": [
-        {
-          "title": "Future(s) of Work",
-          "description": "How will AI change the way we work?"
-        },
-        {
-          "title": "Aya Models",
-          "description": "Multilingual AI at scale"
-        },
-        {
-          "title": "All Papers",
-          "isLink": true
-        }
+      "benchmarks": [
+        { "title": "Operational Benchmarks", "description": "Compare your metrics" },
+        { "title": "Restaurant Technology", "description": "The future of dining tech" }
       ],
-      "initiatives": [
-        {
-          "title": "Research Scholars",
-          "description": "Finding the new generation of ML talent"
-        },
-        {
-          "title": "Open Science Community",
-          "description": "Championing global, open science"
-        },
-        {
-          "title": "Catalyst Grants",
-          "description": "Supporting impactful ML endeavors"
-        }
-      ],
-      "resourcesLinks": [
-        {
-          "title": "Blog"
-        },
-        {
-          "title": "Hugging Face",
-          "external": true
-        },
-        {
-          "title": "Events",
-          "external": true
-        }
+      "resources": [
+        { "title": "Reports & Guides", "isLink": true, "url": "#" }
       ]
     },
     "featured": {
-      "image": "/assets/picss/hero.png",
-      "text": "The future of work debate has an evidence problem →"
+      "image": "/Analatics.png",
+      "text": "Download our 2026 Nepal Restaurant Industry Benchmark Report (Rs 0) →"
     }
   }
 }

@@ -40,22 +40,22 @@ const UserFeedback = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[960px] mx-auto mb-[64px]"
+          className="flex flex-col items-center justify-center max-w-[960px] mx-auto mb-[24px]"
         >
           <div className="text-black/60 font-normal text-[16px] mb-[2px]">
-            70,000 teams and counting
+            Hundreds of restaurants in Nepal and counting
           </div>
 
           <h2 className="font-display text-[48px] text-black leading-tight font-medium tracking-tight text-center mb-[16px]">
-            We've got the receipts.
+            Don't just take our word for it.
           </h2>
 
-          <div className="relative group/btn">
+          {/* <div className="relative group/btn">
             <div className="absolute -inset-0.5 translate-y-0 translate-x-0 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-purple-500 rounded-[8px] blur opacity-0 group-hover/btn:opacity-70 transition duration-500"></div>
             <button className="relative px-[17px] py-[8px] bg-black text-white font-medium rounded-[8px] text-[13px]  transition-colors  shadow-sm">
               View Demo
             </button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
@@ -64,7 +64,7 @@ const UserFeedback = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        className="relative mt-[32px] w-full p-1"
+        className="relative mt-[12px] w-full p-1"
         style={{
           WebkitMaskImage: `linear-gradient(to right, rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}), black ${EDGE_FADE_WIDTH}, black calc(100% - ${EDGE_FADE_WIDTH}), rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}))`,
           maskImage: `linear-gradient(to right, rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}), black ${EDGE_FADE_WIDTH}, black calc(100% - ${EDGE_FADE_WIDTH}), rgba(0,0,0,${EDGE_FADE_INTENSITY / 100}))`,
