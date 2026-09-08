@@ -32,7 +32,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[27px] font-medium text-gray-900 leading-tight tracking-tight">
-                Inventory & Supply Chain <span className="text-black/60 font-normal">track local <br /> suppliers and stock effortlessly</span>
+                Inventory & Supply Chain <span className="text-black/60 text-[20px]  font-normal"> <br />track local suppliers and stock effortlessly</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[27px] font-medium text-gray-900 leading-tight tracking-tight">
-                Table & Order Management <span className="text-black/60 font-normal">that <br /> handles peak hours flawlessly</span>
+                Table & Order Management <span className="text-black/60  text-[20px] font-normal"><br />  that handles peak hours flawlessly</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#e5e4da] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                Digital KOT & Kitchen Sync <span className="text-black/60 font-normal">ensures zero delays between hall and kitchen</span>
+                Digital KOT & Kitchen Sync <span className="text-black/60 text-[20px] font-normal"> <br /> ensures zero delays between hall and kitchen</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                Multi-branch Control <span className="text-black/60 font-normal">to manage <br /> outlets across Kathmandu and beyond</span>
+                Multi-branch Control <span className="text-black/60  text-[20px] font-normal"><br /> to manage outlets across Kathmandu and beyond</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@ const EmptyBento = () => {
             <AnimatedDots />
             <div className="flex justify-between items-start mb-[16px] relative z-30">
               <h3 className="text-[24px] font-medium text-gray-900 leading-tight tracking-tight">
-                Seamless POS & Payments <span className="text-black/60 font-normal">like <br /> eSewa, Fonepay, and more</span>
+                Seamless POS & Payments <span className="text-black/60 text-[20px] font-normal"> <br /> like eSewa, Fonepay, and more</span>
               </h3>
               <div className="flex w-[37px] h-[37px] shrink-0 items-center justify-center rounded-[6px] bg-[#eae7e5] border border-[#dedcdb]">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
