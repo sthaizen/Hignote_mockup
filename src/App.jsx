@@ -117,7 +117,7 @@ const Home = () => {
 
       <div className="sticky top-0 z-0 w-full pointer-events-auto overflow-hidden  bg-[#f5f3eb]">
         <div ref={heroRef} className="w-full origin-top ">
-          <HeroComp />
+          {/* <HeroComp /> */}
         </div>
       </div>
 
@@ -125,7 +125,7 @@ const Home = () => {
         {/* <FounderMessage /> */}
         <EmptyBento />
         <ReviewsSection />
-        <FourCardSection />
+        {/* <FourCardSection /> */}
         <PicturePoints />
         <OnePlatform />
         <UserFeedback />
@@ -135,16 +135,6 @@ const Home = () => {
 
 
 
-        {/* <CoolSection /> */}
-        {/* <PricingComp /> */}
-        {/* <PointOfViewComp /> */}
-        {/* <InsightsComp /> */}
-        {/* <PlaceholderComp /> */}
-        {/* <TeamComp /> */}
-        {/* <BentoComponent /> */}
-        {/* <NewsletterComp /> */}
-        {/* <TwoBentos /> */}
-        {/* <Footer /> */}
 
       </div>
 
