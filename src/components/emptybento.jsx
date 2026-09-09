@@ -2,6 +2,7 @@ import React from 'react';
 import AnimatedDots from './AnimatedDots';
 import IntegrationCloud from './IntegrationCloud';
 
+// EmptyBento component displaying the main feature grid
 const EmptyBento = () => {
   return (
     <section className="pt-[80px] bg-[#f5f3eb]">

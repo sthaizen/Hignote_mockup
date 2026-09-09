@@ -32,7 +32,9 @@ import NavBar from './components/NavBar';
 import Main from './components/main';
 import EmptyBento from './components/emptybento';
 import TwoBentos from './components/2bentos';
+import StatsComponent from './components/StatsComponent';
 
+// Home component for handling layout and smooth scrolling
 const Home = () => {
   const location = useLocation();
   const lenisRef = useRef();
@@ -124,6 +126,7 @@ const Home = () => {
       <div ref={foregroundRef} className="relative z-10 bg-[#f5f3eb] shadow-[0_-15px_50px_rgba(0,0,0,0.15)] ">
         {/* <FounderMessage /> */}
         <EmptyBento />
+        <StatsComponent />
         <ReviewsSection />
         {/* <FourCardSection /> */}
         <PicturePoints />
